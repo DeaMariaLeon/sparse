@@ -1,17 +1,17 @@
 # Sparse
 
 This implements sparse arrays of arbitrary dimension on top of
-`numpy`{.interpreted-text role-"obj"} and
-`scipy.sparse`{.interpreted-text role-"obj"}. It generalizes the
-`scipy.sparse.coo_matrix`{.interpreted-text role-"obj"} and
-`scipy.sparse.dok_matrix`{.interpreted-text role-"obj"} layouts, but
+[numpy](https://numpy.org/doc/stable/reference/index.html#module-numpy) and
+[scipy.sparse](https://docs.scipy.org/doc/scipy/reference/sparse.html#module-scipy.sparse). It generalizes the
+[scipy.sparse.coo_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix) and
+[scipy.sparse.dok_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.dok_matrix.html#scipy.sparse.dok_matrix) layouts, but
 extends beyond just rows and columns to an arbitrary number of
 dimensions.
 
 Additionally, this project maintains compatibility with the
-`numpy.ndarray`{.interpreted-text role-"obj"} interface rather than the
-`numpy.matrix`{.interpreted-text role-"obj"} interface used in
-`scipy.sparse`{.interpreted-text role-"obj"}
+[numpy.ndarray](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray) interface rather than the
+[numpy.matrix](https://numpy.org/doc/stable/reference/generated/numpy.matrix.html#numpy.matrix) interface used in
+[scipy.sparse](https://docs.scipy.org/doc/scipy/reference/sparse.html#module-scipy.sparse)
 
 These differences make this project useful in certain situations where
 scipy.sparse matrices are not well suited, but it should not be
@@ -87,7 +87,7 @@ across many use cases.
 
 Together these formats cover a wide array of applications of sparsity.
 Additionally, with each format complying with the
-`numpy.ndarray`{.interpreted-text role-"obj"} interface and following
+[numpy.ndarray]{.interpreted-text role-"obj"} interface and following
 the appropriate dispatching protocols, pydata/sparse arrays can interact
 with other array libraries and seamlessly take part in
 pydata-ecosystem-based workflows.

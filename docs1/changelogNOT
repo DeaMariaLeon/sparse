@@ -1,0 +1,492 @@
+# Changelog
+
+::: currentmodule
+sparse
+:::
+
+## 0.15.1 / 2024-01-10
+
+-   Fix regression where with XArray by supporting all API functions via
+    the Array API standard. (`622`{.interpreted-text role="pr"} thanks
+    `hameerabbasi`{.interpreted-text role="ghuser"})
+
+## 0.15.0 / 2024-01-09
+
+-   Fix regression where
+    `` DeprecationWarning`s were being fired unexpectedly. (:pr:`581 ``{.interpreted-text
+    role="obj"} thanks `hameerabbasi`{.interpreted-text role="ghuser"})
+-   Extended `sparse.einsum`{.interpreted-text role="obj"} support
+    (`579`{.interpreted-text role="pr"} thanks
+    `HadrienNU`{.interpreted-text role="ghuser"})
+-   General code clean-up (`586`{.interpreted-text role="pr"} thanks
+    `MHRasmy`{.interpreted-text role="ghuser"}, `598`{.interpreted-text
+    role="pr"} thanks `jamestwebber`{.interpreted-text role="ghuser"})
+-   Bug fixes with respect to NumPy compatibility
+    (`598`{.interpreted-text role="pr"} thanks
+    `hameerabbasi`{.interpreted-text role="ghuser"},
+    `609`{.interpreted-text role="pr"} thanks
+    `Illviljan`{.interpreted-text role="ghuser"},
+    `620`{.interpreted-text role="pr"} thanks
+    `mtsokol`{.interpreted-text role="ghuser"})
+-   Bug fixes with respect to GCXS (`611`{.interpreted-text role="pr"}
+    thanks `EuGig`{.interpreted-text role="ghuser"},
+    `601`{.interpreted-text role="pr"} thanks
+    `jamestwebber`{.interpreted-text role="ghuser"})
+-   [Array API standard](https://data-apis.org/array-api/latest/)
+    support (`612`{.interpreted-text role="pr"}, `613`{.interpreted-text
+    role="pr"}, `614`{.interpreted-text role="pr"},
+    `615`{.interpreted-text role="pr"}, `619`{.interpreted-text
+    role="pr"}, `620`{.interpreted-text role="pr"} thanks
+    `mtsokol`{.interpreted-text role="ghuser"})
+-   `matrepr` support for display of sparse data
+    (`605`{.interpreted-text role="pr"}, `606`{.interpreted-text
+    role="pr"} thanks `alugowski`{.interpreted-text role="ghuser"}).
+-   Larger code clean-up with Ruff formatter and linter
+    (`617`{.interpreted-text role="pr"}, `621`{.interpreted-text
+    role="pr"} thanks `hameerabbasi`{.interpreted-text role="ghuser"})
+-   Packaging and maintenance (`616`{.interpreted-text role="pr"},
+    `b5954e68d3d6e35a62f7401d1d4fb84ea04414dd`{.interpreted-text
+    role="commit"},
+    `dda93d3ea9521881c721c3ba875c769c9c5a79d4`{.interpreted-text
+    role="commit"} thanks `hameerabbasi`{.interpreted-text
+    role="ghuser"})
+
+## 0.14.0 / 2023-02-24
+
+-   `sparse.einsum`{.interpreted-text role="obj"} support
+    (`564`{.interpreted-text role="pr"} thanks
+    `jcmgray`{.interpreted-text role="ghuser"})
+-   Some bug-fixes (`524`{.interpreted-text role="pr"},
+    `527`{.interpreted-text role="pr"}, `555`{.interpreted-text
+    role="pr"} thanks `hameerabbasi`{.interpreted-text role="ghuser"},
+    `569`{.interpreted-text role="pr"}, thanks
+    `jamestwebber`{.interpreted-text role="ghuser"},
+    `534`{.interpreted-text role="pr"}, thanks
+    `sarveshbhatnagar`{.interpreted-text role="ghuser"})
+-   Some performance improvements (`570`{.interpreted-text role="pr"},
+    thanks `jamestwebber`{.interpreted-text role="ghuser"},
+    `540`{.interpreted-text role="pr"}, thanks
+    `smldub`{.interpreted-text role="ghuser"}).
+-   Miscellaneous maintenance fixes.
+
+## 0.13.0 / 2021-08-28
+
+-   GCXS improvements and changes. (`448`{.interpreted-text role="pr"},
+    `450`{.interpreted-text role="pr"}, `455`{.interpreted-text
+    role="pr"}, thanks `sayandip18`{.interpreted-text role="ghuser"}).
+-   Maintainence fixes (`462`{.interpreted-text role="pr"},
+    `466`{.interpreted-text role="pr"},
+    `1ccb85da581be65a0345b399e00fd3c325700d95`{.interpreted-text
+    role="commit"},
+    `5547b4e92dc8d61492e9dc10ba00175c1a6637fa`{.interpreted-text
+    role="commit"}
+    `00c0e5514de2aab8b9a0be16b5da470b091d9eb9`{.interpreted-text
+    role="commit"},
+    `fcd3020dd08c7022a44f709173fe23969d3e8f7c`{.interpreted-text
+    role="commit"}, thanks `hameerabbasi`{.interpreted-text
+    role="ghuser"})
+-   `sparse.DOK.from_scipy_sparse`{.interpreted-text role="obj"} method
+    (`464`{.interpreted-text role="pr"}, `463`{.interpreted-text
+    role="issue"}, thanks `hameerabbasi`{.interpreted-text
+    role="ghuser"}).
+-   Black re-formatting (`471`{.interpreted-text role="pr"},
+    `484`{.interpreted-text role="pr"}, thanks
+    `GenevieveBuckley`{.interpreted-text role="ghuser"},
+    `sayandip18`{.interpreted-text role="ghuser"})
+-   Add `sparse.pad`{.interpreted-text role="obj"}
+    (`474`{.interpreted-text role="pr"}, `438`{.interpreted-text
+    role="issue"}, thanks `H4R5H1T-007`{.interpreted-text
+    role="ghuser"})
+-   Switch to GitHub Actions
+    (`5547b4e92dc8d61492e9dc10ba00175c1a6637fa..a332f22c96a96e5ab9b4384342df67e8f3966f85`{.interpreted-text
+    role="compare"})
+-   Fix a number of bugs in format conversion. (`504`{.interpreted-text
+    role="pr"}, `503`{.interpreted-text role="issue"}, thanks
+    `hameerabbasi`{.interpreted-text role="ghuser"})
+-   Fix bug in `sparse.matmul`{.interpreted-text role="obj"} for
+    higher-dimensional arrays. (`508`{.interpreted-text role="pr"},
+    `506`{.interpreted-text role="issue"}, thanks
+    `sayandip18`{.interpreted-text role="ghuser"}).
+-   Fix scalar conversion to COO (`510`{.interpreted-text role="issue"},
+    `511`{.interpreted-text role="pr"}, thanks
+    `hameerabbasi`{.interpreted-text role="ghuser"})
+-   Fix OOB memory accesses (`515`{.interpreted-text role="issue"},
+    `1e24a7e29786e888dee4c02153309986ae4b5dde`{.interpreted-text
+    role="commit"} thanks `hameerabbasi`{.interpreted-text
+    role="ghuser"})
+-   Fixes element-wise ops with scalar COO array.
+    (`505`{.interpreted-text role="issue"},
+    `5211441ec685233657ab7156f99eb67e660cee86`{.interpreted-text
+    role="commit"}, thanks `hameerabbasi`{.interpreted-text
+    role="ghuser"})
+-   Fix scalar broadcast_to with `nnz==0`. (`513`{.interpreted-text
+    role="issue"},
+    `bfabaa0805e811884e79c4bdbfd14316986d65e4`{.interpreted-text
+    role="commit"}, thanks `hameerabbasi`{.interpreted-text
+    role="ghuser"})
+-   Add order parameter to `{zero, ones, full}[_like]`.
+    (`514`{.interpreted-text role="issue"},
+    `37de1d0141c4375962ecdf18337c2dd0f667b60c`{.interpreted-text
+    role="commit"}, thanks `hameerabbasi`{.interpreted-text
+    role="ghuser"})
+-   Fix tensordot typing bugs. (`493`{.interpreted-text role="issue"},
+    `499`{.interpreted-text role="issue"},
+    `37de1d0141c4375962ecdf18337c2dd0f667b60c`{.interpreted-text
+    role="commit"}, thanks `hameerabbasi`{.interpreted-text
+    role="ghuser"}).
+
+## 0.12.0 / 2021-03-19
+
+There are a number of large changes in this release. For example, we
+have implemented the `GCXS`{.interpreted-text role="obj"} type, and its
+specializations `CSR`{.interpreted-text role="obj"} and
+`CSC`{.interpreted-text role="obj"}. We plan on gradually improving the
+performance of these.
+
+-   A number of `GCXS`{.interpreted-text role="obj"} fixes and additions
+    (`409`{.interpreted-text role="pr"}, `407`{.interpreted-text
+    role="pr"}, `414`{.interpreted-text role="pr"},
+    `417`{.interpreted-text role="pr"}, `419`{.interpreted-text
+    role="pr"} thanks `daletovar`{.interpreted-text role="ghuser"})
+-   Ability to change the index dtype for better storage
+    characteristics. (`441`{.interpreted-text role="pr"}, thanks
+    `daletovar`{.interpreted-text role="ghuser"})
+-   Some work on `DOK`{.interpreted-text role="obj"} arrays to bring
+    them closer to the other formats (`435`{.interpreted-text
+    role="pr"}, `437`{.interpreted-text role="pr"},
+    `439`{.interpreted-text role="pr"}, `440`{.interpreted-text
+    role="pr"}, thanks `DragaDoncila`{.interpreted-text role="ghuser"})
+-   `CSR`{.interpreted-text role="obj"} and `CSC`{.interpreted-text
+    role="obj"} specializations of `GCXS`{.interpreted-text role="obj"}
+    (`442`{.interpreted-text role="pr"}, thanks
+    `ivirshup`{.interpreted-text role="ghuser"}) For now, this is
+    experimental undocumented API, and subject to change.
+-   Fix a number of bugs (`407`{.interpreted-text role="pr"},
+    `406`{.interpreted-text role="issue"})
+-   Add `nnz` parameter to `sparse.random`{.interpreted-text role="obj"}
+    (`410`{.interpreted-text role="pr"}, thanks
+    `emilmelnikov`{.interpreted-text role="ghuser"})
+
+## 0.11.2 / 2020-09-04
+
+-   Fix `TypingError`{.interpreted-text role="obj"} on
+    `sparse.dot`{.interpreted-text role="obj"} with complex dtypes.
+    (`403`{.interpreted-text role="issue"}, `404`{.interpreted-text
+    role="pr"})
+
+## 0.11.1 / 2020-08-31
+
+-   Fix `ValueError`{.interpreted-text role="obj"} on
+    `sparse.dot`{.interpreted-text role="obj"} with extremely small
+    values. (`398`{.interpreted-text role="issue"},
+    `399`{.interpreted-text role="pr"})
+
+## 0.11.0 / 2020-08-18
+
+-   Improve the performance of `sparse.dot`{.interpreted-text
+    role="obj"}. (`331`{.interpreted-text role="issue"},
+    `389`{.interpreted-text role="pr"}, thanks
+    `daletovar`{.interpreted-text role="ghuser"})
+-   Added the `COO.swapaxes`{.interpreted-text role="obj"} method.
+    (`344`{.interpreted-text role="pr"}, thanks
+    `lueckem`{.interpreted-text role="ghuser"})
+-   Added multi-axis 1-D indexing support. (`343`{.interpreted-text
+    role="pr"}, thanks `mikeymezher`{.interpreted-text role="ghuser"})
+-   Fix `outer`{.interpreted-text role="obj"} for arrays that weren\'t
+    one-dimensional. (`346`{.interpreted-text role="issue"},
+    `347`{.interpreted-text role="pr"})
+-   Add `casting` kwarg to `COO.astype`{.interpreted-text role="obj"}.
+    (`391`{.interpreted-text role="issue"}, `392`{.interpreted-text
+    role="pr"})
+-   Fix for `COO`{.interpreted-text role="obj"} constructor accepting
+    invalid inputs. (`385`{.interpreted-text role="issue"},
+    `386`{.interpreted-text role="pr"})
+
+## 0.10.0 / 2020-05-13
+
+-   Fixed a bug where converting an empty DOK array to COO leads to an
+    incorrect dtype. (`314`{.interpreted-text role="issue"},
+    `315`{.interpreted-text role="pr"})
+-   Change code formatter to black. (`284`{.interpreted-text role="pr"})
+-   Add `COO.flatten`{.interpreted-text role="obj"} and
+    `sparse.outer`{.interpreted-text role="obj"}.
+    (`316`{.interpreted-text role="issue"}, `317`{.interpreted-text
+    role="pr"}).
+-   Remove broadcasting restriction between sparse arrays and dense
+    arrays. (`306`{.interpreted-text role="issue"},
+    `318`{.interpreted-text role="pr"})
+-   Implement deterministic dask tokenization. (`300`{.interpreted-text
+    role="issue"}, `320`{.interpreted-text role="pr"}, thanks
+    `danielballan`{.interpreted-text role="ghuser"})
+-   Improve testing around densification (`321`{.interpreted-text
+    role="pr"}, thanks `danielballan`{.interpreted-text role="ghuser"})
+-   Simplify Numba extension. (`324`{.interpreted-text role="pr"},
+    thanks `eric-wieser`{.interpreted-text role="ghuser"}).
+-   Respect `copy=False` in `astype` (`328`{.interpreted-text
+    role="pr"}, thanks `eric-wieser`{.interpreted-text role="ghuser"}).
+-   Replace linear_loc with ravel_multi_index, which is 3x faster.
+    (`330`{.interpreted-text role="pr"}, thanks
+    `eric-wieser`{.interpreted-text role="ghuser"}).
+-   Add error msg to tensordot operation when `ndim==0`
+    (`332`{.interpreted-text role="issue"}, `333`{.interpreted-text
+    role="pr"}, thanks `guilhermeleobas`{.interpreted-text
+    role="ghuser"}).
+-   Maintainence fixes for Sphinx 3.0 and Numba 0.49, and dropping
+    support for Python 3.5. (`337`{.interpreted-text role="pr"}).
+-   Fixed signature for `numpy.clip`{.interpreted-text role="obj"}.
+
+## 0.9.1 / 2020-01-23
+
+-   Fixed a bug where indexing with an empty list could lead to issues.
+    (`281`{.interpreted-text role="issue"}, `282`{.interpreted-text
+    role="pr"})
+-   Change code formatter to black. (`284`{.interpreted-text role="pr"})
+-   Add the `diagonal`{.interpreted-text role="obj"} and
+    `diagonalize`{.interpreted-text role="obj"} functions.
+    (`288`{.interpreted-text role="issue"}, `289`{.interpreted-text
+    role="pr"}, thanks `pettni`{.interpreted-text role="ghuser"})
+-   Add HTML repr for notebooks. (`283`{.interpreted-text role="pr"},
+    thanks `daletovar`{.interpreted-text role="ghuser"})
+-   Avoid making copy of `coords` when making a new
+    `COO`{.interpreted-text role="obj"} array.
+-   Add stack and concatenate for GCXS. (`301`{.interpreted-text
+    role="issue"}, `303`{.interpreted-text role="pr"}, thanks
+    `daletovar`{.interpreted-text role="ghuser"}).
+-   Fix issue where functions dispatching to an attribute access
+    wouldn\'t work with `__array_function__`. (`308`{.interpreted-text
+    role="issue"}, `309`{.interpreted-text role="pr"}).
+-   Add partial support for constructing and mirroring
+    `COO`{.interpreted-text role="obj"} objects to Numba.
+
+## 0.8.0 / 2019-08-26
+
+This release switches to Numba\'s new typed lists, a lot of back-end
+work with the CI infrastructure, so Linux, macOS and Windows are
+officially tested. It also includes bug fixes.
+
+It also adds in-progress, not yet public support for the GCXS format,
+which is a generalisation of CSR/CSC. (huge thanks to
+`daletovar`{.interpreted-text role="ghuser"})
+
+-   Fixed a bug where an array with size == 1 and nnz == 0 could not be
+    broadcast. (`242`{.interpreted-text role="issue"},
+    `243`{.interpreted-text role="pr"})
+-   Add `std` and `var`. (`244`{.interpreted-text role="pr"})
+-   Move to Azure Pipelines with CI for Windows, macOS and Linux.
+    (`245`{.interpreted-text role="pr"}, `246`{.interpreted-text
+    role="pr"}, `247`{.interpreted-text role="pr"},
+    `248`{.interpreted-text role="pr"})
+-   Add `resize`, and change `reshape` so it raises a `ValueError` on
+    shapes that don\'t correspond to the same size.
+    (`241`{.interpreted-text role="issue"}, `250`{.interpreted-text
+    role="issue"}, `256`{.interpreted-text role="pr"} thanks,
+    `daletovar`{.interpreted-text role="ghuser"})
+-   Add `isposinf` and `isneginf`. (`252`{.interpreted-text
+    role="issue"}, `253`{.interpreted-text role="pr"})
+-   Fix `tensordot` when nnz = 0. (`255`{.interpreted-text
+    role="issue"}, `256`{.interpreted-text role="pr"})
+-   Modifications to `__array_function__` to allow for sparse XArrays.
+    (`261`{.interpreted-text role="pr"}, thanks
+    `nvictus`{.interpreted-text role="ghuser"})
+-   Add not-yet-public support for GCXS. (`258`{.interpreted-text
+    role="pr"}, thanks `daletovar`{.interpreted-text role="ghuser"})
+-   Improvements to `__array_function__`. (`267`{.interpreted-text
+    role="pr"}, `272`{.interpreted-text role="pr"}, thanks
+    `crusaderky`{.interpreted-text role="ghuser"})
+-   Convert all Numba lists to typed lists. (`264`{.interpreted-text
+    role="pr"})
+-   Why write code when it exists elsewhere? (`277`{.interpreted-text
+    role="pr"})
+-   Fix some element-wise operations with scalars.
+    (`278`{.interpreted-text role="pr"})
+-   Private modules should be private, and tests should be in the
+    package. (`280`{.interpreted-text role="pr"})
+
+## 0.7.0 / 2019-03-14
+
+This is a release that adds compatibility with NumPy\'s new
+`__array_function__` protocol, for details refer to
+[NEP-18](http://www.numpy.org/neps/nep-0018-array-function-protocol.html#coercion-to-a-numpy-array-as-a-catch-all-fallback).
+
+The other big change is that we dropped compatibility with Python 2.
+Users on Python 2 should use version 0.6.0.
+
+There are also some bug-fixes relating to fill-values.
+
+This was mainly a contributor-driven release.
+
+The full list of changes can be found below:
+
+-   Fixed a bug where going between `sparse.DOK`{.interpreted-text
+    role="obj"} and `sparse.COO`{.interpreted-text role="obj"} caused
+    fill-values to be lost. (`225`{.interpreted-text role="issue"},
+    `226`{.interpreted-text role="pr"}).
+-   Fixed warning for a matrix that was incorrectly considered too
+    dense. (`228`{.interpreted-text role="issue"},
+    `229`{.interpreted-text role="pr"})
+-   Fixed some warnings in Python 3.7, the fix was needed. in
+    preparation for Python 3.8. (`233`{.interpreted-text role="pr"},
+    thanks `nils-werner`{.interpreted-text role="ghuser"})
+-   Drop support for Python 2.7 (`234`{.interpreted-text role="issue"},
+    `235`{.interpreted-text role="pr"}, thanks
+    `hugovk`{.interpreted-text role="ghuser"})
+-   Clearer error messages (`230`{.interpreted-text role="issue"},
+    `231`{.interpreted-text role="issue"}, `232`{.interpreted-text
+    role="pr"})
+-   Restructure requirements.txt files. (`236`{.interpreted-text
+    role="pr"})
+-   Support fill-value in reductions in specific cases.
+    (`237`{.interpreted-text role="issue"}, `238`{.interpreted-text
+    role="pr"})
+-   Add `__array_function__` support. (`239`{.interpreted-text
+    role="pr"}, thanks, `pentschev`{.interpreted-text role="ghuser"})
+-   Cleaner code! (`240`{.interpreted-text role="pr"})
+
+## 0.6.0 / 2018-12-19
+
+This release breaks backward-compatibility. Previously, if arrays were
+fed into NumPy functions, an attempt would be made to densify the array
+and apply the NumPy function. This was unintended behaviour in most
+cases, with the array filling up memory before raising a `MemoryError`
+if the array was too large.
+
+We have now changed this behaviour so that a `RuntimeError` is now
+raised if an attempt is made to automatically densify an array. To
+densify, use the explicit `.todense()` method.
+
+-   Fixed a bug where `np.matrix` could sometimes fail to convert to a
+    `COO`. (`199`{.interpreted-text role="issue"},
+    `200`{.interpreted-text role="pr"}).
+-   Make sure that `sparse @ sparse` returns a sparse array.
+    (`201`{.interpreted-text role="issue"}, `203`{.interpreted-text
+    role="pr"})
+-   Bring `operator.matmul` behaviour in line with NumPy for `ndim > 2`.
+    (`202`{.interpreted-text role="issue"}, `204`{.interpreted-text
+    role="pr"}, `217`{.interpreted-text role="pr"})
+-   Make sure `dtype` is preserved with the `out` kwarg.
+    (`205`{.interpreted-text role="issue"}, `206`{.interpreted-text
+    role="pr"})
+-   Fix integer overflow in `reduce` on Windows.
+    (`207`{.interpreted-text role="issue"}, `208`{.interpreted-text
+    role="pr"})
+-   Disallow auto-densification. (`218`{.interpreted-text role="issue"},
+    `220`{.interpreted-text role="pr"})
+-   Add auto-densification configuration, and a configurable warning for
+    checking if the array is too dense. (`210`{.interpreted-text
+    role="pr"}, `213`{.interpreted-text role="pr"})
+-   Add pruning of fill-values to COO constructor.
+    (`221`{.interpreted-text role="pr"})
+
+## 0.5.0 / 2018-10-12
+
+-   Added `COO.real`, `COO.imag`, and `COO.conj`
+    (`196`{.interpreted-text role="pr"}).
+-   Added `sparse.kron` function (`194`{.interpreted-text role="pr"},
+    `195`{.interpreted-text role="pr"}).
+-   Added `order` parameter to `COO.reshape` to make it work with
+    `np.reshape` (`193`{.interpreted-text role="pr"}).
+-   Added `COO.mean` and `sparse.nanmean` (`190`{.interpreted-text
+    role="pr"}).
+-   Added `sparse.full` and `sparse.full_like` (`189`{.interpreted-text
+    role="pr"}).
+-   Added `COO.clip` method (`185`{.interpreted-text role="pr"}).
+-   Added `COO.copy` method, and changed pickle of `COO` to not include
+    its cache (`184`{.interpreted-text role="pr"}).
+-   Added `sparse.eye`, `sparse.zeros`, `sparse.zeros_like`,
+    `sparse.ones`, and `sparse.ones_like` (`183`{.interpreted-text
+    role="pr"}).
+
+## 0.4.1 / 2018-09-12
+
+-   Allow mixed `ndarray`-`COO` operations if the result is sparse
+    (`124`{.interpreted-text role="issue"}, via `182`{.interpreted-text
+    role="pr"}).
+-   Allow specifying a fill-value when converting from NumPy arrays
+    (`179`{.interpreted-text role="issue"}, via `180`{.interpreted-text
+    role="pr"}).
+-   Added `COO.any` and `COO.all` methods (`175`{.interpreted-text
+    role="pr"}).
+-   Indexing for `COO` now accepts a single one-dimensional array index
+    (`172`{.interpreted-text role="pr"}).
+-   The fill-value can now be something other than zero or `False`
+    (`165`{.interpreted-text role="pr"}).
+-   Added a `sparse.roll` function (`160`{.interpreted-text role="pr"}).
+-   Numba code now releases the GIL. This leads to better multi-threaded
+    performance in Dask (`159`{.interpreted-text role="pr"}).
+-   A number of bugs occurred, so to resolve them, `COO.coords.dtype` is
+    always `np.int64`. `COO`, therefore, uses more memory than before
+    (`158`{.interpreted-text role="pr"}).
+-   Add support for saving and loading `COO` files from disk
+    (`153`{.interpreted-text role="issue"}, via `154`{.interpreted-text
+    role="pr"}).
+-   Support `COO.nonzero` and `np.argwhere` (`145`{.interpreted-text
+    role="issue"}, via `148`{.interpreted-text role="pr"}).
+-   Allow faux in-place operations (`80`{.interpreted-text
+    role="issue"}, via `146`{.interpreted-text role="pr"}).
+-   `COO` is now always canonical (`141`{.interpreted-text role="pr"}).
+-   Improve indexing performance (`128`{.interpreted-text role="pr"}).
+-   Improve element-wise performance (`127`{.interpreted-text
+    role="pr"}).
+-   Reductions now support a negative axis (`117`{.interpreted-text
+    role="issue"}, via `118`{.interpreted-text role="pr"}).
+-   Match behaviour of `ufunc.reduce` from NumPy
+    (`107`{.interpreted-text role="issue"}, via `108`{.interpreted-text
+    role="pr"}).
+
+## 0.3.1 / 2018-04-12
+
+-   Fix packaging error (`138`{.interpreted-text role="pr"}).
+
+## 0.3.0 / 2018-02-22
+
+-   Add NaN-skipping aggregations (`102`{.interpreted-text role="pr"}).
+-   Add equivalent to `np.where` (`102`{.interpreted-text role="pr"}).
+-   N-input universal functions now work (`98`{.interpreted-text
+    role="pr"}).
+-   Make `dot` more consistent with NumPy (`96`{.interpreted-text
+    role="pr"}).
+-   Create a base class `SparseArray` (`92`{.interpreted-text
+    role="pr"}).
+-   Minimum NumPy version is now 1.13 (`90`{.interpreted-text
+    role="pr"}).
+-   Fix a bug where setting a `DOK` element to zero did nothing
+    (`93`{.interpreted-text role="issue"}, via `94`{.interpreted-text
+    role="pr"}).
+
+## 0.2.0 / 2018-01-25
+
+-   Support faster `np.array(COO)` (`87`{.interpreted-text role="pr"}).
+-   Add `DOK` type (`85`{.interpreted-text role="pr"}).
+-   Fix sum for large arrays (`82`{.interpreted-text role="issue"}, via
+    `83`{.interpreted-text role="pr"}).
+-   Support `.size` and `.density` (`69`{.interpreted-text role="pr"}).
+-   Documentation added for the package (`43`{.interpreted-text
+    role="pr"}).
+-   Minimum required SciPy version is now 0.19 (`70`{.interpreted-text
+    role="pr"}).
+-   `len(COO)` now works (`68`{.interpreted-text role="pr"}).
+-   `scalar op COO` now works for all operators (`67`{.interpreted-text
+    role="pr"}).
+-   Validate axes for `.transpose()` (`61`{.interpreted-text
+    role="pr"}).
+-   Extend indexing support (`57`{.interpreted-text role="pr"}).
+-   Add `random` function for generating random sparse arrays
+    (`41`{.interpreted-text role="pr"}).
+-   `COO(COO)` now copies the original object (`55`{.interpreted-text
+    role="pr"}).
+-   NumPy universal functions and reductions now work on `COO` arrays
+    (`49`{.interpreted-text role="pr"}).
+-   Fix concatenate and stack for large arrays (`32`{.interpreted-text
+    role="issue"}, via `51`{.interpreted-text role="pr"}).
+-   Fix `nnz` for scalars (`47`{.interpreted-text role="issue"}, via
+    `48`{.interpreted-text role="pr"}).
+-   Support more operators and remove all special cases
+    (`46`{.interpreted-text role="pr"}).
+-   Add support for `triu` and `tril` (`40`{.interpreted-text
+    role="pr"}).
+-   Add support for Ellipsis (`...`) and `None` when indexing
+    (`37`{.interpreted-text role="pr"}).
+-   Add support for bitwise bindary operations like `&` and `|`
+    (`38`{.interpreted-text role="pr"}).
+-   Support broadcasting in element-wise operations
+    (`35`{.interpreted-text role="pr"}).

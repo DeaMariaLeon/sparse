@@ -17,6 +17,6 @@ plugins:
 #- section-index
 - mkdocstrings
 nav:
-- sparse:
-  #- reference/finch_backend/__init__.md
-  - reference/numba_backend/_coo/core.md
+- Home: index.md 
+- API:
+  - api/core.md

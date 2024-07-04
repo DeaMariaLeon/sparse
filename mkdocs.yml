@@ -8,15 +8,19 @@ markdown_extensions:
   - tables
 
 plugins:
-#- search
+- search
 #- gen-files:
 #    scripts:
 #    - scripts/gen_ref_pages.py
 #- literate-nav:
 #    nav_file: SUMMARY.md
-#- section-index
-- mkdocstrings
+- section-index
+- mkdocstrings:
+    handlers:
+          python:
+            options:
+              members: yes
 nav:
-- Home: index.md 
+- index.md 
 - API:
   - api/core.md

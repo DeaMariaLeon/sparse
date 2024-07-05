@@ -15,16 +15,6 @@ for path in sorted(src.rglob("*.py")):
     full_doc_path = Path("api", doc_path)
 
     parts = tuple(module_path.parts)
-    #breakpoint()
-    #if parts[-1] == "__init__":
-    #    parts = parts[:-1]
-    #    continue
-    #    doc_path = doc_path.with_name("index.md")
-    #    full_doc_path = full_doc_path.with_name("index.md")
-    #elif parts[-1] == "__main__":
-    #    continue
-    ##breakpoint()
-    #nav[parts] = doc_path.as_posix()
 
     if parts[-1] == "common" or parts[-1] == "core":
         nav[parts] = doc_path.as_posix()

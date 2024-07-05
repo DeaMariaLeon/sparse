@@ -24,14 +24,7 @@ plugins:
               inherited_members: yes
               members_order: alphabetical
               filters:
-              - "!^_+"
-              #group_by_category: True
-              #show_root_members_full_path: False
-              #heading_level: 1
-              #show_bases: False
-              #show_inheritance_diagram: False
-              #parameter_headings: False
-              
+              - "!^_+" 
 nav:
 - index.md
 - API: 

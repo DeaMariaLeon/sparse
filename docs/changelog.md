@@ -1,15 +1,13 @@
-Changelog
-=========
+# Changelog
 
-.. currentmodule:: sparse
 
-0.15.1 / 2024-01-10
--------------------
+# 0.15.1 / 2024-01-10
+
 * Fix regression where with XArray by supporting all API functions via the Array API standard. (:pr:`622` thanks :ghuser:`hameerabbasi`)
 
-0.15.0 / 2024-01-09
--------------------
-* Fix regression where [DeprecationWarning]s were being fired unexpectedly.
+# 0.15.0 / 2024-01-09
+
+* Fix regression where [DeprecationWarning][]s were being fired unexpectedly.
 (PR[581](https://github.com/pydata/sparse/pull/581)) thanks [@hameerabbasi](https://github.com/hameerabbasi)
 * Extended :obj:`sparse.einsum` support (:pr:`579` thanks :ghuser:`HadrienNU`)
 * General code clean-up (:pr:`586` thanks :ghuser:`MHRasmy`, :pr:`598` thanks :ghuser:`jamestwebber`)
@@ -21,16 +19,15 @@ Changelog
 * Packaging and maintenance (:pr:`616`, :commit:`b5954e68d3d6e35a62f7401d1d4fb84ea04414dd`, :commit:`dda93d3ea9521881c721c3ba875c769c9c5a79d4` thanks :ghuser:`hameerabbasi`)
 
 
-0.14.0 / 2023-02-24
--------------------
+# 0.14.0 / 2023-02-24
+
 * :obj:`sparse.einsum` support (:pr:`564` thanks
   :ghuser:`jcmgray`)
 * Some bug-fixes (:pr:`524`, :pr:`527`, :pr:`555` thanks :ghuser:`hameerabbasi`, :pr:`569`, thanks :ghuser:`jamestwebber`, :pr:`534`, thanks :ghuser:`sarveshbhatnagar`)
 * Some performance improvements (:pr:`570`, thanks :ghuser:`jamestwebber`, :pr:`540`, thanks :ghuser:`smldub`).
 * Miscellaneous maintenance fixes.
 
-0.13.0 / 2021-08-28
--------------------
+# 0.13.0 / 2021-08-28
 
 * GCXS improvements and changes. (:pr:`448`, :pr:`450`, :pr:`455`, thanks
   :ghuser:`sayandip18`).
@@ -59,8 +56,7 @@ Changelog
 * Fix tensordot typing bugs. (:issue:`493`, :issue:`499`, :commit:`37de1d0141c4375962ecdf18337c2dd0f667b60c`,
   thanks :ghuser:`hameerabbasi`).
 
-0.12.0 / 2021-03-19
--------------------
+# 0.12.0 / 2021-03-19
 
 There are a number of large changes in this release. For example, we have implemented the
 :obj:`GCXS` type, and its specializations :obj:`CSR` and :obj:`CSC`. We plan on gradually improving
@@ -77,18 +73,15 @@ the performance of these.
 * Fix a number of bugs (:pr:`407`, :issue:`406`)
 * Add ``nnz`` parameter to :obj:`sparse.random` (:pr:`410`, thanks :ghuser:`emilmelnikov`)
 
-0.11.2 / 2020-09-04
--------------------
+# 0.11.2 / 2020-09-04
 
 * Fix :obj:`TypingError` on :obj:`sparse.dot` with complex dtypes. (:issue:`403`, :pr:`404`)
 
-0.11.1 / 2020-08-31
--------------------
+# 0.11.1 / 2020-08-31
 
 * Fix :obj:`ValueError` on :obj:`sparse.dot` with extremely small values. (:issue:`398`, :pr:`399`)
 
-0.11.0 / 2020-08-18
--------------------
+# 0.11.0 / 2020-08-18
 
 * Improve the performance of :obj:`sparse.dot`. (:issue:`331`, :pr:`389`, thanks :ghuser:`daletovar`)
 * Added the :obj:`COO.swapaxes` method. (:pr:`344`, thanks :ghuser:`lueckem`)
@@ -97,8 +90,7 @@ the performance of these.
 * Add ``casting`` kwarg to :obj:`COO.astype`. (:issue:`391`, :pr:`392`)
 * Fix for :obj:`COO` constructor accepting invalid inputs. (:issue:`385`, :pr:`386`)
 
-0.10.0 / 2020-05-13
--------------------
+# 0.10.0 / 2020-05-13
 
 * Fixed a bug where converting an empty DOK array to COO leads
   to an incorrect dtype. (:issue:`314`, :pr:`315`)
@@ -120,8 +112,7 @@ the performance of these.
   Python 3.5. (:pr:`337`).
 * Fixed signature for :obj:`numpy.clip`.
 
-0.9.1 / 2020-01-23
-------------------
+# 0.9.1 / 2020-01-23
 
 * Fixed a bug where indexing with an empty list could lead
   to issues. (:issue:`281`, :pr:`282`)
@@ -138,8 +129,7 @@ the performance of these.
 * Add partial support for constructing and mirroring :obj:`COO` objects to
   Numba.
 
-0.8.0 / 2019-08-26
-------------------
+# 0.8.0 / 2019-08-26
 
 This release switches to Numba's new typed lists, a lot of
 back-end work with the CI infrastructure, so Linux, macOS
@@ -172,8 +162,7 @@ format, which is a generalisation of CSR/CSC. (huge thanks to
   (:pr:`280`)
 
 
-0.7.0 / 2019-03-14
-------------------
+# 0.7.0 / 2019-03-14
 
 This is a release that adds compatibility with NumPy's new
 ``__array_function__`` protocol, for details refer to
@@ -203,8 +192,7 @@ The full list of changes can be found below:
 * Add ``__array_function__`` support. (:pr:`239`, thanks, :ghuser:`pentschev`)
 * Cleaner code! (:pr:`240`)
 
-0.6.0 / 2018-12-19
-------------------
+# 0.6.0 / 2018-12-19
 
 This release breaks backward-compatibility. Previously, if arrays were fed into
 NumPy functions, an attempt would be made to densify the array and apply the NumPy
@@ -227,8 +215,7 @@ an attempt is made to automatically densify an array. To densify, use the explic
   if the array is too dense. (:pr:`210`, :pr:`213`)
 * Add pruning of fill-values to COO constructor. (:pr:`221`)
 
-0.5.0 / 2018-10-12
-------------------
+# 0.5.0 / 2018-10-12
 
 * Added :code:`COO.real`, :code:`COO.imag`, and :code:`COO.conj` (:pr:`196`).
 * Added :code:`sparse.kron` function (:pr:`194`, :pr:`195`).
@@ -242,8 +229,7 @@ an attempt is made to automatically densify an array. To densify, use the explic
 * Added :code:`sparse.eye`, :code:`sparse.zeros`, :code:`sparse.zeros_like`,
   :code:`sparse.ones`, and :code:`sparse.ones_like` (:pr:`183`).
 
-0.4.1 / 2018-09-12
-------------------
+# 0.4.1 / 2018-09-12
 
 * Allow mixed :code:`ndarray`-:code:`COO` operations if the result is sparse
   (:issue:`124`, via :pr:`182`).
@@ -272,13 +258,11 @@ an attempt is made to automatically densify an array. To densify, use the explic
 * Match behaviour of :code:`ufunc.reduce` from NumPy (:issue:`107`, via
   :pr:`108`).
 
-0.3.1 / 2018-04-12
-------------------
+# 0.3.1 / 2018-04-12
 
 * Fix packaging error (:pr:`138`).
 
-0.3.0 / 2018-02-22
-------------------
+# 0.3.0 / 2018-02-22
 
 * Add NaN-skipping aggregations (:pr:`102`).
 * Add equivalent to :code:`np.where` (:pr:`102`).
@@ -289,8 +273,7 @@ an attempt is made to automatically densify an array. To densify, use the explic
 * Fix a bug where setting a :code:`DOK` element to zero did nothing
   (:issue:`93`, via :pr:`94`).
 
-0.2.0 / 2018-01-25
-------------------
+# 0.2.0 / 2018-01-25
 
 * Support faster :code:`np.array(COO)` (:pr:`87`).
 * Add :code:`DOK` type (:pr:`85`).

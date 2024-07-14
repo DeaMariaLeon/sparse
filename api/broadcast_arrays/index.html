@@ -2662,9 +2662,9 @@
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_common.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2175</span>
-<span class="normal">2176</span>
-<span class="normal">2177</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">broadcast_arrays</span><span class="p">(</span><span class="o">*</span><span class="n">arrays</span><span class="p">):</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2180</span>
+<span class="normal">2181</span>
+<span class="normal">2182</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">broadcast_arrays</span><span class="p">(</span><span class="o">*</span><span class="n">arrays</span><span class="p">):</span>
     <span class="n">shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_shapes</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">])</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>

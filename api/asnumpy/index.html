@@ -2661,13 +2661,72 @@
     <div class="doc doc-contents first">
 
       <p>Returns a dense numpy array from an arbitrary source array.</p>
-<p>Args:
-    a: Arbitrary object that can be converted to :class:<code>numpy.ndarray</code>.
-    order ({'C', 'F', 'A'}): The desired memory layout of the output
-        array. When <code>order</code> is 'A', it uses 'F' if <code>a</code> is
-        fortran-contiguous and 'C' otherwise.
-Returns:
-    numpy.ndarray: Converted array on the host memory.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>a</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Arbitrary object that can be converted to <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray">numpy.ndarray</a>.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>order</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The desired memory layout of the output
+array. When <code>order</code> is 'A', it uses 'F' if <code>a</code> is
+fortran-contiguous and 'C' otherwise.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>numpy.ndarray: Converted array on the host memory.</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_common.py</code></summary>
@@ -2686,16 +2745,26 @@ Returns:
 <span class="normal">1888</span>
 <span class="normal">1889</span>
 <span class="normal">1890</span>
-<span class="normal">1891</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">asnumpy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal">1891</span>
+<span class="normal">1892</span>
+<span class="normal">1893</span>
+<span class="normal">1894</span>
+<span class="normal">1895</span>
+<span class="normal">1896</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">asnumpy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dense numpy array from an arbitrary source array.</span>
 
-<span class="sd">    Args:</span>
-<span class="sd">        a: Arbitrary object that can be converted to :class:`numpy.ndarray`.</span>
-<span class="sd">        order ({&#39;C&#39;, &#39;F&#39;, &#39;A&#39;}): The desired memory layout of the output</span>
-<span class="sd">            array. When ``order`` is &#39;A&#39;, it uses &#39;F&#39; if ``a`` is</span>
-<span class="sd">            fortran-contiguous and &#39;C&#39; otherwise.</span>
-<span class="sd">    Returns:</span>
-<span class="sd">        numpy.ndarray: Converted array on the host memory.</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a: array_like</span>
+<span class="sd">       Arbitrary object that can be converted to [numpy.ndarray][].</span>
+<span class="sd">    order: ({&#39;C&#39;, &#39;F&#39;, &#39;A&#39;})</span>
+<span class="sd">       The desired memory layout of the output</span>
+<span class="sd">       array. When ``order`` is &#39;A&#39;, it uses &#39;F&#39; if ``a`` is</span>
+<span class="sd">       fortran-contiguous and &#39;C&#39; otherwise.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numpy.ndarray: Converted array on the host memory.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">._sparse_array</span> <span class="kn">import</span> <span class="n">SparseArray</span>
 

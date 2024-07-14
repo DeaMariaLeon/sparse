@@ -1,0 +1,1584 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../contributing/">
+      
+      
+        <link rel="next" href="../conduct/">
+      
+      
+      <link rel="icon" href="../assets/images/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Changelog - sparse</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../css/mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#changelog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="sparse" class="md-header__button md-logo" aria-label="sparse" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            sparse
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pydata/sparse.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Sparse
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../install/" class="md-tabs__link">
+        
+  
+    
+  
+  Install
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../quickstart/" class="md-tabs__link">
+        
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../construct/" class="md-tabs__link">
+        
+  
+    
+  
+  Construct Sparse Arrays
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../operations/" class="md-tabs__link">
+        
+  
+    
+  
+  Operations on COO and GCXS arrays
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../api/BACKEND/" class="md-tabs__link">
+        
+  
+    
+  
+  API
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../roadmap/" class="md-tabs__link">
+        
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributing/" class="md-tabs__link">
+        
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../conduct/" class="md-tabs__link">
+        
+  
+    
+  
+  Code of Conduct
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="sparse" class="md-nav__button md-logo" aria-label="sparse" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    sparse
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pydata/sparse.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sparse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Construct Sparse Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operations on COO and GCXS arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../api/BackendType/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0151-2024-01-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.15.1 / 2024-01-10
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0150-2024-01-09" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.15.0 / 2024-01-09
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0140-2023-02-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.14.0 / 2023-02-24
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0130-2021-08-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.13.0 / 2021-08-28
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0120-2021-03-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.12.0 / 2021-03-19
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0112-2020-09-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.11.2 / 2020-09-04
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0111-2020-08-31" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.11.1 / 2020-08-31
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0110-2020-08-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.11.0 / 2020-08-18
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0100-2020-05-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.10.0 / 2020-05-13
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#091-2020-01-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.9.1 / 2020-01-23
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#080-2019-08-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.0 / 2019-08-26
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#070-2019-03-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.7.0 / 2019-03-14
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#060-2018-12-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.6.0 / 2018-12-19
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#050-2018-10-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.5.0 / 2018-10-12
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#041-2018-09-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.4.1 / 2018-09-12
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#031-2018-04-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.3.1 / 2018-04-12
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#030-2018-02-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.3.0 / 2018-02-22
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#020-2018-01-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.2.0 / 2018-01-25
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conduct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0151-2024-01-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.15.1 / 2024-01-10
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0150-2024-01-09" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.15.0 / 2024-01-09
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0140-2023-02-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.14.0 / 2023-02-24
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0130-2021-08-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.13.0 / 2021-08-28
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0120-2021-03-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.12.0 / 2021-03-19
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0112-2020-09-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.11.2 / 2020-09-04
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0111-2020-08-31" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.11.1 / 2020-08-31
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0110-2020-08-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.11.0 / 2020-08-18
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0100-2020-05-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.10.0 / 2020-05-13
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#091-2020-01-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.9.1 / 2020-01-23
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#080-2019-08-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.8.0 / 2019-08-26
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#070-2019-03-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.7.0 / 2019-03-14
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#060-2018-12-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.6.0 / 2018-12-19
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#050-2018-10-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.5.0 / 2018-10-12
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#041-2018-09-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.4.1 / 2018-09-12
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#031-2018-04-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.3.1 / 2018-04-12
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#030-2018-02-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.3.0 / 2018-02-22
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#020-2018-01-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.2.0 / 2018-01-25
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="changelog">Changelog</h1>
+<p>.. currentmodule:: sparse</p>
+<h2 id="0151-2024-01-10">0.15.1 / 2024-01-10</h2>
+<ul>
+<li>Fix regression where with XArray by supporting all API functions via the Array API standard. (:pr:<code>622</code> thanks :ghuser:<code>hameerabbasi</code>)</li>
+</ul>
+<h2 id="0150-2024-01-09">0.15.0 / 2024-01-09</h2>
+<ul>
+<li>Fix regression where :obj:<code>DeprecationWarning</code>s were being fired unexpectedly. (:pr:<code>581</code> thanks :ghuser:<code>hameerabbasi</code>)</li>
+<li>Extended :obj:<code>sparse.einsum</code> support (:pr:<code>579</code> thanks :ghuser:<code>HadrienNU</code>)</li>
+<li>General code clean-up (:pr:<code>586</code> thanks :ghuser:<code>MHRasmy</code>, :pr:<code>598</code> thanks :ghuser:<code>jamestwebber</code>)</li>
+<li>Bug fixes with respect to NumPy compatibility  (:pr:<code>598</code> thanks :ghuser:<code>hameerabbasi</code>, :pr:<code>609</code> thanks :ghuser:<code>Illviljan</code>, :pr:<code>620</code> thanks :ghuser:<code>mtsokol</code>)</li>
+<li>Bug fixes with respect to GCXS (:pr:<code>611</code> thanks :ghuser:<code>EuGig</code>, :pr:<code>601</code> thanks :ghuser:<code>jamestwebber</code>)</li>
+<li><code>Array API standard &lt;https://data-apis.org/array-api/latest/&gt;</code>_ support (:pr:<code>612</code>, :pr:<code>613</code>, :pr:<code>614</code>, :pr:<code>615</code>, :pr:<code>619</code>, :pr:<code>620</code> thanks :ghuser:<code>mtsokol</code>)</li>
+<li><code>matrepr</code> support for display of sparse data (:pr:<code>605</code>, :pr:<code>606</code> thanks :ghuser:<code>alugowski</code>).</li>
+<li>Larger code clean-up with Ruff formatter and linter (:pr:<code>617</code>, :pr:<code>621</code> thanks :ghuser:<code>hameerabbasi</code>)</li>
+<li>Packaging and maintenance (:pr:<code>616</code>, :commit:<code>b5954e68d3d6e35a62f7401d1d4fb84ea04414dd</code>, :commit:<code>dda93d3ea9521881c721c3ba875c769c9c5a79d4</code> thanks :ghuser:<code>hameerabbasi</code>)</li>
+</ul>
+<h2 id="0140-2023-02-24">0.14.0 / 2023-02-24</h2>
+<ul>
+<li>:obj:<code>sparse.einsum</code> support (:pr:<code>564</code> thanks
+  :ghuser:<code>jcmgray</code>)</li>
+<li>Some bug-fixes (:pr:<code>524</code>, :pr:<code>527</code>, :pr:<code>555</code> thanks :ghuser:<code>hameerabbasi</code>, :pr:<code>569</code>, thanks :ghuser:<code>jamestwebber</code>, :pr:<code>534</code>, thanks :ghuser:<code>sarveshbhatnagar</code>)</li>
+<li>Some performance improvements (:pr:<code>570</code>, thanks :ghuser:<code>jamestwebber</code>, :pr:<code>540</code>, thanks :ghuser:<code>smldub</code>).</li>
+<li>Miscellaneous maintenance fixes.</li>
+</ul>
+<h2 id="0130-2021-08-28">0.13.0 / 2021-08-28</h2>
+<ul>
+<li>GCXS improvements and changes. (:pr:<code>448</code>, :pr:<code>450</code>, :pr:<code>455</code>, thanks
+  :ghuser:<code>sayandip18</code>).</li>
+<li>Maintainence fixes (:pr:<code>462</code>, :pr:<code>466</code>, :commit:<code>1ccb85da581be65a0345b399e00fd3c325700d95</code>,
+  :commit:<code>5547b4e92dc8d61492e9dc10ba00175c1a6637fa</code>
+  :commit:<code>00c0e5514de2aab8b9a0be16b5da470b091d9eb9</code>, :commit:<code>fcd3020dd08c7022a44f709173fe23969d3e8f7c</code>,
+  thanks :ghuser:<code>hameerabbasi</code>)</li>
+<li>:obj:<code>sparse.DOK.from_scipy_sparse</code> method (:pr:<code>464</code>, :issue:<code>463</code>, thanks
+  :ghuser:<code>hameerabbasi</code>).</li>
+<li>Black re-formatting (:pr:<code>471</code>, :pr:<code>484</code>, thanks :ghuser:<code>GenevieveBuckley</code>, :ghuser:<code>sayandip18</code>)</li>
+<li>Add :obj:<code>sparse.pad</code> (:pr:<code>474</code>, :issue:<code>438</code>, thanks :ghuser:<code>H4R5H1T-007</code>)</li>
+<li>Switch to GitHub Actions (:compare:<code>5547b4e92dc8d61492e9dc10ba00175c1a6637fa..a332f22c96a96e5ab9b4384342df67e8f3966f85</code>)</li>
+<li>Fix a number of bugs in format conversion. (:pr:<code>504</code>, :issue:<code>503</code>, thanks
+  :ghuser:<code>hameerabbasi</code>)</li>
+<li>Fix bug in :obj:<code>sparse.matmul</code> for higher-dimensional arrays. (:pr:<code>508</code>,
+  :issue:<code>506</code>, thanks :ghuser:<code>sayandip18</code>).</li>
+<li>Fix scalar conversion to COO (:issue:<code>510</code>, :pr:<code>511</code>, thanks :ghuser:<code>hameerabbasi</code>)</li>
+<li>Fix OOB memory accesses (:issue:<code>515</code>, :commit:<code>1e24a7e29786e888dee4c02153309986ae4b5dde</code>
+  thanks :ghuser:<code>hameerabbasi</code>)</li>
+<li>Fixes element-wise ops with scalar COO array. (:issue:<code>505</code>, :commit:<code>5211441ec685233657ab7156f99eb67e660cee86</code>,
+  thanks :ghuser:<code>hameerabbasi</code>)</li>
+<li>Fix scalar broadcast_to with <code>nnz==0</code>. (:issue:<code>513</code>, :commit:<code>bfabaa0805e811884e79c4bdbfd14316986d65e4</code>,
+  thanks :ghuser:<code>hameerabbasi</code>)</li>
+<li>Add order parameter to <code>{zero, ones, full}[_like]</code>. (:issue:<code>514</code>, :commit:<code>37de1d0141c4375962ecdf18337c2dd0f667b60c</code>,
+  thanks :ghuser:<code>hameerabbasi</code>)</li>
+<li>Fix tensordot typing bugs. (:issue:<code>493</code>, :issue:<code>499</code>, :commit:<code>37de1d0141c4375962ecdf18337c2dd0f667b60c</code>,
+  thanks :ghuser:<code>hameerabbasi</code>).</li>
+</ul>
+<h2 id="0120-2021-03-19">0.12.0 / 2021-03-19</h2>
+<p>There are a number of large changes in this release. For example, we have implemented the
+:obj:<code>GCXS</code> type, and its specializations :obj:<code>CSR</code> and :obj:<code>CSC</code>. We plan on gradually improving
+the performance of these.</p>
+<ul>
+<li>A number of :obj:<code>GCXS</code> fixes and additions (:pr:<code>409</code>, :pr:<code>407</code>, :pr:<code>414</code>,
+  :pr:<code>417</code>, :pr:<code>419</code> thanks :ghuser:<code>daletovar</code>)</li>
+<li>Ability to change the index dtype for better storage characteristics. (:pr:<code>441</code>,
+  thanks :ghuser:<code>daletovar</code>)</li>
+<li>Some work on :obj:<code>DOK</code> arrays to bring them closer to the other formats (:pr:<code>435</code>,
+  :pr:<code>437</code>, :pr:<code>439</code>, :pr:<code>440</code>, thanks :ghuser:<code>DragaDoncila</code>)</li>
+<li>:obj:<code>CSR</code> and :obj:<code>CSC</code> specializations of :obj:<code>GCXS</code> (:pr:<code>442</code>, thanks :ghuser:<code>ivirshup</code>)
+  For now, this is experimental undocumented API, and subject to change.</li>
+<li>Fix a number of bugs (:pr:<code>407</code>, :issue:<code>406</code>)</li>
+<li>Add <code>nnz</code> parameter to :obj:<code>sparse.random</code> (:pr:<code>410</code>, thanks :ghuser:<code>emilmelnikov</code>)</li>
+</ul>
+<h2 id="0112-2020-09-04">0.11.2 / 2020-09-04</h2>
+<ul>
+<li>Fix :obj:<code>TypingError</code> on :obj:<code>sparse.dot</code> with complex dtypes. (:issue:<code>403</code>, :pr:<code>404</code>)</li>
+</ul>
+<h2 id="0111-2020-08-31">0.11.1 / 2020-08-31</h2>
+<ul>
+<li>Fix :obj:<code>ValueError</code> on :obj:<code>sparse.dot</code> with extremely small values. (:issue:<code>398</code>, :pr:<code>399</code>)</li>
+</ul>
+<h2 id="0110-2020-08-18">0.11.0 / 2020-08-18</h2>
+<ul>
+<li>Improve the performance of :obj:<code>sparse.dot</code>. (:issue:<code>331</code>, :pr:<code>389</code>, thanks :ghuser:<code>daletovar</code>)</li>
+<li>Added the :obj:<code>COO.swapaxes</code> method. (:pr:<code>344</code>, thanks :ghuser:<code>lueckem</code>)</li>
+<li>Added multi-axis 1-D indexing support. (:pr:<code>343</code>, thanks :ghuser:<code>mikeymezher</code>)</li>
+<li>Fix :obj:<code>outer</code> for arrays that weren't one-dimensional. (:issue:<code>346</code>, :pr:<code>347</code>)</li>
+<li>Add <code>casting</code> kwarg to :obj:<code>COO.astype</code>. (:issue:<code>391</code>, :pr:<code>392</code>)</li>
+<li>Fix for :obj:<code>COO</code> constructor accepting invalid inputs. (:issue:<code>385</code>, :pr:<code>386</code>)</li>
+</ul>
+<h2 id="0100-2020-05-13">0.10.0 / 2020-05-13</h2>
+<ul>
+<li>Fixed a bug where converting an empty DOK array to COO leads
+  to an incorrect dtype. (:issue:<code>314</code>, :pr:<code>315</code>)</li>
+<li>Change code formatter to black. (:pr:<code>284</code>)</li>
+<li>Add :obj:<code>COO.flatten</code> and :obj:<code>sparse.outer</code>. (:issue:<code>316</code>, :pr:<code>317</code>).</li>
+<li>Remove broadcasting restriction between sparse arrays and dense arrays.
+  (:issue:<code>306</code>, :pr:<code>318</code>)</li>
+<li>Implement deterministic dask tokenization. (:issue:<code>300</code>, :pr:<code>320</code>, thanks
+  :ghuser:<code>danielballan</code>)</li>
+<li>Improve testing around densification (:pr:<code>321</code>, thanks
+  :ghuser:<code>danielballan</code>)</li>
+<li>Simplify Numba extension. (:pr:<code>324</code>, thanks :ghuser:<code>eric-wieser</code>).</li>
+<li>Respect <code>copy=False</code> in <code>astype</code> (:pr:<code>328</code>, thanks :ghuser:<code>eric-wieser</code>).</li>
+<li>Replace linear_loc with ravel_multi_index, which is 3x faster. (:pr:<code>330</code>,
+  thanks :ghuser:<code>eric-wieser</code>).</li>
+<li>Add error msg to tensordot operation when <code>ndim==0</code> (:issue:<code>332</code>,
+  :pr:<code>333</code>, thanks :ghuser:<code>guilhermeleobas</code>).</li>
+<li>Maintainence fixes for Sphinx 3.0 and Numba 0.49, and dropping support for
+  Python 3.5. (:pr:<code>337</code>).</li>
+<li>Fixed signature for :obj:<code>numpy.clip</code>.</li>
+</ul>
+<h2 id="091-2020-01-23">0.9.1 / 2020-01-23</h2>
+<ul>
+<li>Fixed a bug where indexing with an empty list could lead
+  to issues. (:issue:<code>281</code>, :pr:<code>282</code>)</li>
+<li>Change code formatter to black. (:pr:<code>284</code>)</li>
+<li>Add the :obj:<code>diagonal</code> and :obj:<code>diagonalize</code> functions.
+  (:issue:<code>288</code>, :pr:<code>289</code>, thanks :ghuser:<code>pettni</code>)</li>
+<li>Add HTML repr for notebooks. (:pr:<code>283</code>, thanks :ghuser:<code>daletovar</code>)</li>
+<li>Avoid making copy of <code>coords</code> when making a new :obj:<code>COO</code>
+  array.</li>
+<li>Add stack and concatenate for GCXS. (:issue:<code>301</code>, :pr:<code>303</code>, thanks
+  :ghuser:<code>daletovar</code>).</li>
+<li>Fix issue where functions dispatching to an attribute access wouldn't
+  work with <code>__array_function__</code>. (:issue:<code>308</code>, :pr:<code>309</code>).</li>
+<li>Add partial support for constructing and mirroring :obj:<code>COO</code> objects to
+  Numba.</li>
+</ul>
+<h2 id="080-2019-08-26">0.8.0 / 2019-08-26</h2>
+<p>This release switches to Numba's new typed lists, a lot of
+back-end work with the CI infrastructure, so Linux, macOS
+and Windows are officially tested. It also includes bug fixes.</p>
+<p>It also adds in-progress, not yet public support for the GCXS
+format, which is a generalisation of CSR/CSC. (huge thanks to
+:ghuser:<code>daletovar</code>)</p>
+<ul>
+<li>Fixed a bug where an array with size == 1 and nnz == 0
+  could not be broadcast. (:issue:<code>242</code>, :pr:<code>243</code>)</li>
+<li>Add <code>std</code> and <code>var</code>. (:pr:<code>244</code>)</li>
+<li>Move to Azure Pipelines with CI for Windows, macOS and
+  Linux. (:pr:<code>245</code>, :pr:<code>246</code>, :pr:<code>247</code>, :pr:<code>248</code>)</li>
+<li>Add <code>resize</code>, and change <code>reshape</code> so it raises a
+  <code>ValueError</code> on shapes that don't correspond to the
+  same size. (:issue:<code>241</code>, :issue:<code>250</code>, :pr:<code>256</code>
+  thanks, :ghuser:<code>daletovar</code>)</li>
+<li>Add <code>isposinf</code> and <code>isneginf</code>. (:issue:<code>252</code>, :pr:<code>253</code>)</li>
+<li>Fix <code>tensordot</code> when nnz = 0. (:issue:<code>255</code>, :pr:<code>256</code>)</li>
+<li>Modifications to <code>__array_function__</code> to allow for sparse
+  XArrays. (:pr:<code>261</code>, thanks :ghuser:<code>nvictus</code>)</li>
+<li>Add not-yet-public support for GCXS. (:pr:<code>258</code>, thanks :ghuser:<code>daletovar</code>)</li>
+<li>Improvements to <code>__array_function__</code>. (:pr:<code>267</code>, :pr:<code>272</code>, thanks
+  :ghuser:<code>crusaderky</code>)</li>
+<li>Convert all Numba lists to typed lists. (:pr:<code>264</code>)</li>
+<li>Why write code when it exists elsewhere? (:pr:<code>277</code>)</li>
+<li>Fix some element-wise operations with scalars. (:pr:<code>278</code>)</li>
+<li>Private modules should be private, and tests should be in the package.
+  (:pr:<code>280</code>)</li>
+</ul>
+<h2 id="070-2019-03-14">0.7.0 / 2019-03-14</h2>
+<p>This is a release that adds compatibility with NumPy's new
+<code>__array_function__</code> protocol, for details refer to
+<code>NEP-18 &lt;http://www.numpy.org/neps/nep-0018-array-function-protocol.html#coercion-to-a-numpy-array-as-a-catch-all-fallback&gt;</code>_.</p>
+<p>The other big change is that we dropped compatibility with
+Python 2. Users on Python 2 should use version 0.6.0.</p>
+<p>There are also some bug-fixes relating to fill-values.</p>
+<p>This was mainly a contributor-driven release.</p>
+<p>The full list of changes can be found below:</p>
+<ul>
+<li>Fixed a bug where going between :obj:<code>sparse.DOK</code> and
+  :obj:<code>sparse.COO</code> caused fill-values to be lost.
+  (:issue:<code>225</code>, :pr:<code>226</code>).</li>
+<li>Fixed warning for a matrix that was incorrectly considered
+  too dense. (:issue:<code>228</code>, :pr:<code>229</code>)</li>
+<li>Fixed some warnings in Python 3.7, the fix was needed.
+  in preparation for Python 3.8. (:pr:<code>233</code>, thanks :ghuser:<code>nils-werner</code>)</li>
+<li>Drop support for Python 2.7 (:issue:<code>234</code>, :pr:<code>235</code>, thanks
+  :ghuser:<code>hugovk</code>)</li>
+<li>Clearer error messages (:issue:<code>230</code>, :issue:<code>231</code>, :pr:<code>232</code>)</li>
+<li>Restructure requirements.txt files. (:pr:<code>236</code>)</li>
+<li>Support fill-value in reductions in specific cases. (:issue:<code>237</code>, :pr:<code>238</code>)</li>
+<li>Add <code>__array_function__</code> support. (:pr:<code>239</code>, thanks, :ghuser:<code>pentschev</code>)</li>
+<li>Cleaner code! (:pr:<code>240</code>)</li>
+</ul>
+<h2 id="060-2018-12-19">0.6.0 / 2018-12-19</h2>
+<p>This release breaks backward-compatibility. Previously, if arrays were fed into
+NumPy functions, an attempt would be made to densify the array and apply the NumPy
+function. This was unintended behaviour in most cases, with the array filling up
+memory before raising a <code>MemoryError</code> if the array was too large.</p>
+<p>We have now changed this behaviour so that a <code>RuntimeError</code> is now raised if
+an attempt is made to automatically densify an array. To densify, use the explicit
+<code>.todense()</code> method.</p>
+<ul>
+<li>Fixed a bug where <code>np.matrix</code> could sometimes fail to
+  convert to a <code>COO</code>. (:issue:<code>199</code>, :pr:<code>200</code>).</li>
+<li>Make sure that <code>sparse @ sparse</code> returns a sparse array. (:issue:<code>201</code>, :pr:<code>203</code>)</li>
+<li>Bring <code>operator.matmul</code> behaviour in line with NumPy for <code>ndim &gt; 2</code>.
+  (:issue:<code>202</code>, :pr:<code>204</code>, :pr:<code>217</code>)</li>
+<li>Make sure <code>dtype</code> is preserved with the <code>out</code> kwarg. (:issue:<code>205</code>, :pr:<code>206</code>)</li>
+<li>Fix integer overflow in <code>reduce</code> on Windows. (:issue:<code>207</code>, :pr:<code>208</code>)</li>
+<li>Disallow auto-densification. (:issue:<code>218</code>, :pr:<code>220</code>)</li>
+<li>Add auto-densification configuration, and a configurable warning for checking
+  if the array is too dense. (:pr:<code>210</code>, :pr:<code>213</code>)</li>
+<li>Add pruning of fill-values to COO constructor. (:pr:<code>221</code>)</li>
+</ul>
+<h2 id="050-2018-10-12">0.5.0 / 2018-10-12</h2>
+<ul>
+<li>Added :code:<code>COO.real</code>, :code:<code>COO.imag</code>, and :code:<code>COO.conj</code> (:pr:<code>196</code>).</li>
+<li>Added :code:<code>sparse.kron</code> function (:pr:<code>194</code>, :pr:<code>195</code>).</li>
+<li>Added :code:<code>order</code> parameter to :code:<code>COO.reshape</code> to make it work with
+  :code:<code>np.reshape</code> (:pr:<code>193</code>).</li>
+<li>Added :code:<code>COO.mean</code> and :code:<code>sparse.nanmean</code> (:pr:<code>190</code>).</li>
+<li>Added :code:<code>sparse.full</code> and :code:<code>sparse.full_like</code> (:pr:<code>189</code>).</li>
+<li>Added :code:<code>COO.clip</code> method (:pr:<code>185</code>).</li>
+<li>Added :code:<code>COO.copy</code> method, and changed pickle of :code:<code>COO</code> to not
+  include its cache (:pr:<code>184</code>).</li>
+<li>Added :code:<code>sparse.eye</code>, :code:<code>sparse.zeros</code>, :code:<code>sparse.zeros_like</code>,
+  :code:<code>sparse.ones</code>, and :code:<code>sparse.ones_like</code> (:pr:<code>183</code>).</li>
+</ul>
+<h2 id="041-2018-09-12">0.4.1 / 2018-09-12</h2>
+<ul>
+<li>Allow mixed :code:<code>ndarray</code>-:code:<code>COO</code> operations if the result is sparse
+  (:issue:<code>124</code>, via :pr:<code>182</code>).</li>
+<li>Allow specifying a fill-value when converting from NumPy arrays
+  (:issue:<code>179</code>, via :pr:<code>180</code>).</li>
+<li>Added :code:<code>COO.any</code> and :code:<code>COO.all</code> methods (:pr:<code>175</code>).</li>
+<li>Indexing for :code:<code>COO</code> now accepts a single one-dimensional array index
+  (:pr:<code>172</code>).</li>
+<li>The fill-value can now be something other than zero or :code:<code>False</code>
+  (:pr:<code>165</code>).</li>
+<li>Added a :code:<code>sparse.roll</code> function (:pr:<code>160</code>).</li>
+<li>Numba code now releases the GIL. This leads to better multi-threaded
+  performance in Dask (:pr:<code>159</code>).</li>
+<li>A number of bugs occurred, so to resolve them, :code:<code>COO.coords.dtype</code> is
+  always :code:<code>np.int64</code>.  :code:<code>COO</code>, therefore, uses more memory than
+  before (:pr:<code>158</code>).</li>
+<li>Add support for saving and loading :code:<code>COO</code> files from disk (:issue:<code>153</code>,
+  via :pr:<code>154</code>).</li>
+<li>Support :code:<code>COO.nonzero</code> and :code:<code>np.argwhere</code> (:issue:<code>145</code>, via
+  :pr:<code>148</code>).</li>
+<li>Allow faux in-place operations (:issue:<code>80</code>, via :pr:<code>146</code>).</li>
+<li>:code:<code>COO</code> is now always canonical (:pr:<code>141</code>).</li>
+<li>Improve indexing performance (:pr:<code>128</code>).</li>
+<li>Improve element-wise performance (:pr:<code>127</code>).</li>
+<li>Reductions now support a negative axis (:issue:<code>117</code>, via :pr:<code>118</code>).</li>
+<li>Match behaviour of :code:<code>ufunc.reduce</code> from NumPy (:issue:<code>107</code>, via
+  :pr:<code>108</code>).</li>
+</ul>
+<h2 id="031-2018-04-12">0.3.1 / 2018-04-12</h2>
+<ul>
+<li>Fix packaging error (:pr:<code>138</code>).</li>
+</ul>
+<h2 id="030-2018-02-22">0.3.0 / 2018-02-22</h2>
+<ul>
+<li>Add NaN-skipping aggregations (:pr:<code>102</code>).</li>
+<li>Add equivalent to :code:<code>np.where</code> (:pr:<code>102</code>).</li>
+<li>N-input universal functions now work (:pr:<code>98</code>).</li>
+<li>Make :code:<code>dot</code> more consistent with NumPy (:pr:<code>96</code>).</li>
+<li>Create a base class :code:<code>SparseArray</code> (:pr:<code>92</code>).</li>
+<li>Minimum NumPy version is now 1.13 (:pr:<code>90</code>).</li>
+<li>Fix a bug where setting a :code:<code>DOK</code> element to zero did nothing
+  (:issue:<code>93</code>, via :pr:<code>94</code>).</li>
+</ul>
+<h2 id="020-2018-01-25">0.2.0 / 2018-01-25</h2>
+<ul>
+<li>Support faster :code:<code>np.array(COO)</code> (:pr:<code>87</code>).</li>
+<li>Add :code:<code>DOK</code> type (:pr:<code>85</code>).</li>
+<li>Fix sum for large arrays (:issue:<code>82</code>, via :pr:<code>83</code>).</li>
+<li>Support :code:<code>.size</code> and :code:<code>.density</code> (:pr:<code>69</code>).</li>
+<li>Documentation added for the package (:pr:<code>43</code>).</li>
+<li>Minimum required SciPy version is now 0.19 (:pr:<code>70</code>).</li>
+<li>:code:<code>len(COO)</code> now works (:pr:<code>68</code>).</li>
+<li>:code:<code>scalar op COO</code> now works for all operators (:pr:<code>67</code>).</li>
+<li>Validate axes for :code:<code>.transpose()</code> (:pr:<code>61</code>).</li>
+<li>Extend indexing support (:pr:<code>57</code>).</li>
+<li>Add :code:<code>random</code> function for generating random sparse arrays (:pr:<code>41</code>).</li>
+<li>:code:<code>COO(COO)</code> now copies the original object (:pr:<code>55</code>).</li>
+<li>NumPy universal functions and reductions now work on :code:<code>COO</code> arrays
+  (:pr:<code>49</code>).</li>
+<li>Fix concatenate and stack for large arrays (:issue:<code>32</code>, via :pr:<code>51</code>).</li>
+<li>Fix :code:<code>nnz</code> for scalars (:issue:<code>47</code>, via :pr:<code>48</code>).</li>
+<li>Support more operators and remove all special cases (:pr:<code>46</code>).</li>
+<li>Add support for :code:<code>triu</code> and :code:<code>tril</code> (:pr:<code>40</code>).</li>
+<li>Add support for Ellipsis (:code:<code>...</code>) and :code:<code>None</code> when indexing
+  (:pr:<code>37</code>).</li>
+<li>Add support for bitwise bindary operations like :code:<code>&amp;</code> and :code:<code>|</code>
+  (:pr:<code>38</code>).</li>
+<li>Support broadcasting in element-wise operations (:pr:<code>35</code>).</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../contributing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Contributing">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Contributing
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../conduct/" class="md-footer__link md-footer__link--next" aria-label="Next: Code of Conduct">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Code of Conduct
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

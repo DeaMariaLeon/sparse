@@ -1,0 +1,1290 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../construct/">
+      
+      
+        <link rel="next" href="../api/BACKEND/">
+      
+      
+      <link rel="icon" href="../assets/images/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Operations on COO and GCXS arrays - sparse</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../css/mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#operations-on-coo-and-gcxs-arrays" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="sparse" class="md-header__button md-logo" aria-label="sparse" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            sparse
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Operations on COO and GCXS arrays
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pydata/sparse.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Sparse
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../install/" class="md-tabs__link">
+        
+  
+    
+  
+  Install
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../quickstart/" class="md-tabs__link">
+        
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../construct/" class="md-tabs__link">
+        
+  
+    
+  
+  Construct Sparse Arrays
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Operations on COO and GCXS arrays
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../api/BACKEND/" class="md-tabs__link">
+        
+  
+    
+  
+  API
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../roadmap/" class="md-tabs__link">
+        
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributing/" class="md-tabs__link">
+        
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../changelog/" class="md-tabs__link">
+        
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../conduct/" class="md-tabs__link">
+        
+  
+    
+  
+  Code of Conduct
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="sparse" class="md-nav__button md-logo" aria-label="sparse" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    sparse
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pydata/sparse.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sparse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Construct Sparse Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Operations on COO and GCXS arrays
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Operations on COO and GCXS arrays
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations-with-scipysparsespmatrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operations with scipy.sparse.spmatrix
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Broadcasting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-wise-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Element-wise Operations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reductions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reductions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Indexing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Operations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../api/BackendType/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conduct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations-with-scipysparsespmatrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operations with scipy.sparse.spmatrix
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Broadcasting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-wise-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Element-wise Operations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reductions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reductions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Indexing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Operations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="operations-on-coo-and-gcxs-arrays">Operations on <a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO">COO</a> and <a class="autorefs autorefs-internal" href="../api/GCXS/#sparse.GCXS">GCXS</a> arrays</h1>
+<h2 id="operators">Operators</h2>
+<p><a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO">COO</a> and <a class="autorefs autorefs-internal" href="../api/GCXS/#sparse.GCXS">GCXS</a> objects support a number of operations. They interact with scalars,
+<a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray">Numpy arrays</a>, other <a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO">COO</a> and <a class="autorefs autorefs-internal" href="../api/GCXS/#sparse.GCXS">GCXS</a> objects,
+<a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.spmatrix.html#scipy.sparse.spmatrix">scipy.sparse.spmatrix</a> objects, all following standard Python and Numpy
+conventions.</p>
+<p>For example, the following Numpy expression produces equivalent
+results for both Numpy arrays, COO arrays, or a mix of the two:</p>
+<div class="highlight"><pre><span></span><code>   <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beta</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p>However some operations are not supported, like operations that
+implicitly cause dense structures, or numpy functions that are not
+yet implemented for sparse arrays.</p>
+<div class="highlight"><pre><span></span><code>   <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># sparse cholesky not implemented</span>
+</code></pre></div>
+<p>This page describes those valid operations, and their limitations.</p>
+<p><strong><a class="autorefs autorefs-internal" href="../api/elemwise/#sparse.elemwise">elemwise</a></strong></p>
+<p>This function allows you to apply any arbitrary broadcasting function to any number of arguments
+where the arguments can be <a class="autorefs autorefs-internal" href="../api/SparseArray/#sparse.SparseArray">SparseArray</a> objects or <a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.spmatrix.html#scipy.sparse.spmatrix">scipy.sparse.spmatrix</a> objects.
+For example, the following will add two arrays:</p>
+<div class="highlight"><pre><span></span><code>   <span class="n">sparse</span><span class="o">.</span><span class="n">elemwise</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Previously, <a class="autorefs autorefs-internal" href="../api/elemwise/#sparse.elemwise">elemwise</a> was a method of the <a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO">COO</a> class. Now,
+it has been moved to the <a class="autorefs autorefs-internal" href="../#sparse">sparse</a> module.</p>
+</div>
+<p><strong>Auto-Densification</strong></p>
+<p>Operations that would result in dense matrices, such as
+operations with <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray">Numpy arrays</a>
+raises a <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a>. For example, the following will raise a
+<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a> if <code>x</code> is a <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray">numpy.ndarray</a>:</p>
+<div class="highlight"><pre><span></span><code>   <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</code></pre></div>
+<p>However, all of the following are valid operations.</p>
+<div class="highlight"><pre><span></span><code>   <span class="n">x</span> <span class="o">+</span> <span class="mi">0</span>
+   <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span>
+   <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+   <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span>
+   <span class="mi">5</span> <span class="o">*</span> <span class="n">x</span>
+   <span class="n">x</span> <span class="o">/</span> <span class="mf">7.3</span>
+   <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span>
+   <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span>
+   <span class="o">~</span><span class="n">x</span>
+   <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+</code></pre></div>
+<p>We also support operations with a nonzero fill value. These are operations
+that map zero values to nonzero values, such as <code>x + 1</code> or <code>~x</code>.
+In these cases, they will produce an output with a fill value of <code>1</code> or <code>True</code>,
+assuming the original array has a fill value of <code>0</code> or <code>False</code> respectively.</p>
+<p>If densification is needed, it must be explicit. In other words, you must call
+<a class="autorefs autorefs-internal" href="../api/SparseArray/#sparse.SparseArray.todense">SparseArray.todense</a> on the <a class="autorefs autorefs-internal" href="../api/SparseArray/#sparse.SparseArray">SparseArray</a> object. If both operands are <a class="autorefs autorefs-internal" href="../api/SparseArray/#sparse.SparseArray">sparse.SparseArray</a>,
+both must be densified.</p>
+<p><strong>Operations with NumPy arrays</strong></p>
+<p>In certain situations, operations with NumPy arrays are also supported. For example,
+the following will work if <code>x</code> is <a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO">COO</a> and <code>y</code> is a NumPy array:</p>
+<div class="highlight"><pre><span></span><code>   <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+</code></pre></div>
+<p>The following conditions must be met when performing element-wise operations with
+NumPy arrays:</p>
+<ul>
+<li>The operation must produce a consistent fill-values. In other words, the resulting
+  array must also be sparse.</li>
+<li>Operating on the NumPy arrays must not increase the size when broadcasting the arrays.</li>
+</ul>
+<h2 id="operations-with-scipysparsespmatrix">Operations with <a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.spmatrix.html#scipy.sparse.spmatrix">scipy.sparse.spmatrix</a></h2>
+<p>Certain operations with <a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.spmatrix.html#scipy.sparse.spmatrix">scipy.sparse.spmatrix</a> are also supported.
+For example, the following are all allowed if <code>y</code> is a <a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.spmatrix.html#scipy.sparse.spmatrix">scipy.sparse.spmatrix</a>:</p>
+<div class="highlight"><pre><span></span><code>   <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+   <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+   <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+   <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span>
+   <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span>
+</code></pre></div>
+<p>In general, operating on a <a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.spmatrix.html#scipy.sparse.spmatrix">scipy.sparse.spmatrix</a> is the same as operating
+on <a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO">COO</a> or <a class="autorefs autorefs-internal" href="../api/GCXS/#sparse.GCXS">GCXS</a>, as long as it is to the right of the operator.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Results are not guaranteed if <code>x</code> is a <a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.spmatrix.html#scipy.sparse.spmatrix">scipy.sparse.spmatrix</a>.
+For this reason, we recommend that all Scipy sparse matrices should be explicitly
+converted to <a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO">COO</a> or <a class="autorefs autorefs-internal" href="../api/GCXS/#sparse.GCXS">GCXS</a> before any operations.</p>
+</div>
+<h2 id="broadcasting">Broadcasting</h2>
+<p>All binary operators support <a href="https://numpy.org/doc/stable/user/basics.broadcasting.html">broadcasting</a>.
+This means that (under certain conditions) you can perform binary operations
+on arrays with unequal shape. Namely, when the shape is missing a dimension,
+or when a dimension is <code>1</code>. For example, performing a binary operation
+on two <code>COO</code> arrays with shapes <code>(4,)</code> and <code>(5, 1)</code> yields
+an object of shape <code>(5, 4)</code>. The same happens with arrays of shape
+<code>(1, 4)</code> and <code>(5, 1)</code>. However, <code>(4, 1)</code> and <code>(5, 1)</code>
+will raise a <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a>.If densification is needed,</p>
+<h2 id="element-wise-operations">Element-wise Operations</h2>
+<p><a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO">COO</a> and <a class="autorefs autorefs-internal" href="../api/GCXS/#sparse.GCXS">GCXS</a> arrays support a variety of element-wise operations. However, as
+with operators, operations that map zero to a nonzero value are not supported.</p>
+<p>To illustrate, the following are all possible, and will produce another
+<a class="autorefs autorefs-internal" href="../api/SparseArray/#sparse.SparseArray">SparseArray</a>:</p>
+<div class="highlight"><pre><span></span><code>   <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+   <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+   <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+   <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+   <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+   <span class="n">np</span><span class="o">.</span><span class="n">log1p</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+   <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+   <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+   <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+<p>As above, in the last three cases, an array with a nonzero fill value will be produced.</p>
+<p>Notice that you can apply any unary or binary <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.html#numpy.ufunc">numpy.ufunc</a> to <a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO">COO</a>
+arrays, and <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray">numpy.ndarray</a> objects and scalars and it will work so
+long as the result is not dense. When applying to <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray">numpy.ndarray</a> objects,
+we check that operating on the array with zero would always produce a zero.</p>
+<h2 id="reductions">Reductions</h2>
+<p><a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO">COO</a> and <a class="autorefs autorefs-internal" href="../api/GCXS/#sparse.GCXS">GCXS</a> objects support a number of reductions. However, not all important
+reductions are currently implemented (help welcome!). All of the following
+currently work:</p>
+<div class="highlight"><pre><span></span><code>   <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+   <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+   <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+   <span class="n">x</span><span class="o">.</span><span class="n">prod</span><span class="p">()</span>
+</code></pre></div>
+<p><a class="autorefs autorefs-internal" href="../api/SparseArray/#sparse.SparseArray.reduce">SparseArray.reduce</a></p>
+<p>This method can take an arbitrary <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.html#numpy.ufunc">numpy.ufunc</a> and performs a
+reduction using that method. For example, the following will perform
+a sum:</p>
+<div class="highlight"><pre><span></span><code>   <span class="n">x</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This library currently performs reductions by grouping together all
+coordinates along the supplied axes and reducing those. Then, if the
+number in a group is deficient, it reduces an extra time with zero.
+As a result, if reductions can change by adding multiple zeros to
+it, this method won't be accurate. However, it works in most cases.</p>
+</div>
+<p><strong>Partial List of Supported Reductions</strong></p>
+<p>Although any binary <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.html#numpy.ufunc">numpy.ufunc</a> should work for reductions, when calling
+in the form <code>x.reduction()</code>, the following reductions are supported:</p>
+<ul>
+<li><a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO.sum">COO.sum</a></li>
+<li><a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO.max">COO.max</a></li>
+<li><a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO.min">COO.min</a></li>
+<li><a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO.prod">COO.prod</a></li>
+</ul>
+<h2 id="indexing">Indexing</h2>
+<p><a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO">COO</a> and <a class="autorefs autorefs-internal" href="../api/GCXS/#sparse.GCXS">GCXS</a> arrays can be <a href="https://numpy.org/doc/stable/user/basics.indexing.html">indexed</a>
+just like regular <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray">numpy.ndarray</a> objects. They support integer, slice and boolean indexing.
+However, currently, numpy advanced indexing is not properly supported. This
+means that all of the following work like in Numpy, except that they will produce
+<a class="autorefs autorefs-internal" href="../api/SparseArray/#sparse.SparseArray">SparseArray</a> arrays rather than <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray">numpy.ndarray</a> objects, and will produce
+scalars where expected. Assume that <code>z.shape</code> is <code>(5, 6, 7)</code></p>
+<div class="highlight"><pre><span></span><code>   <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+   <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+   <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+   <span class="n">z</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+   <span class="n">z</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+   <span class="n">z</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+<p>All of the following will raise an :obj:<code>IndexError</code>, like in Numpy 1.13 and later.</p>
+<div class="highlight"><pre><span></span><code>   <span class="n">z</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+   <span class="n">z</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+   <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+   <span class="n">z</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+</code></pre></div>
+<p><strong>Advanced Indexing</strong></p>
+<p>Advanced indexing (indexing arrays with other arrays) is supported, but only for indexing
+with a <em>single array</em>. Indexing a single array with multiple arrays is not supported at
+this time. As above, if <code>z.shape</code> is <code>(5, 6, 7)</code>, all of the following will
+work like NumPy:</p>
+<div class="highlight"><pre><span></span><code>   <span class="n">z</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+   <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
+   <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+   <span class="n">z</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+</code></pre></div>
+<p><strong>Package Configuration</strong></p>
+<p>By default, when performing something like <code>np.array(COO)</code>, we allow the array
+to be converted into a dense one. To prevent this and raise a <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError">RuntimeError</a>
+instead, set the environment variable <code>SPARSE_AUTO_DENSIFY</code> to <code>0</code>.</p>
+<p>If it is desired to raise a warning if creating a sparse array that takes no less
+memory than an equivalent desne array, set the environment variable
+<code>SPARSE_WARN_ON_TOO_DENSE</code> to <code>1</code>.</p>
+<h2 id="other-operations">Other Operations</h2>
+<p><a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO">COO</a> and <a class="autorefs autorefs-internal" href="../api/GCXS/#sparse.GCXS">GCXS</a> arrays support a number of other common operations. Among them are
+<a class="autorefs autorefs-internal" href="../api/dot/#sparse.dot">dot</a>, <a class="autorefs autorefs-internal" href="../api/tensordot/#sparse.tensordot">tensordot</a> <a class="autorefs autorefs-internal" href="../api/einsum/#sparse.einsum">einsum</a>, <a class="autorefs autorefs-internal" href="../api/concatenate/#sparse.concatenate">concatenate</a>
+and <a class="autorefs autorefs-internal" href="../api/stack/#sparse.stack">stack</a>, <a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO.transpose">transpose</a> and <a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO.reshape">reshape</a>.
+You can view the full list on the <a href="../../api/BACKEND/">API reference page</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some operations require zero fill-values (such as <a class="autorefs autorefs-internal" href="../api/COO/#sparse.COO.nonzero">nonzero</a>)
+and others (such as <a class="autorefs autorefs-internal" href="../api/concatenate/#sparse.concatenate">concatenate</a>) require that all inputs have consistent fill-values.
+For details, check the API reference.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../construct/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Construct Sparse Arrays">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Construct Sparse Arrays
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../api/BACKEND/" class="md-footer__link md-footer__link--next" aria-label="Next: API">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                API
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.indexes", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

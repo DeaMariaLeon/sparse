@@ -9,7 +9,8 @@ Changelog
 
 0.15.0 / 2024-01-09
 -------------------
-* Fix regression where :obj:`DeprecationWarning`s were being fired unexpectedly. (:pr:`581` thanks :ghuser:`hameerabbasi`)
+* Fix regression where [DeprecationWarning]s were being fired unexpectedly. 
+(PR[581](https://github.com/pydata/sparse/pull/581)) thanks [@hameerabbasi](https://github.com/hameerabbasi)
 * Extended :obj:`sparse.einsum` support (:pr:`579` thanks :ghuser:`HadrienNU`)
 * General code clean-up (:pr:`586` thanks :ghuser:`MHRasmy`, :pr:`598` thanks :ghuser:`jamestwebber`)
 * Bug fixes with respect to NumPy compatibility  (:pr:`598` thanks :ghuser:`hameerabbasi`, :pr:`609` thanks :ghuser:`Illviljan`, :pr:`620` thanks :ghuser:`mtsokol`)

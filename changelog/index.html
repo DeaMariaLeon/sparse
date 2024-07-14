@@ -42,6 +42,8 @@
     
       <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
       <link rel="stylesheet" href="../css/mkdocstrings.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -1201,7 +1203,8 @@
 </ul>
 <h2 id="0150-2024-01-09">0.15.0 / 2024-01-09</h2>
 <ul>
-<li>Fix regression where :obj:<code>DeprecationWarning</code>s were being fired unexpectedly. (:pr:<code>581</code> thanks :ghuser:<code>hameerabbasi</code>)</li>
+<li>Fix regression where [DeprecationWarning]s were being fired unexpectedly.
+(PR<a href="https://github.com/pydata/sparse/pull/581">581</a>) thanks <a href="https://github.com/hameerabbasi">@hameerabbasi</a></li>
 <li>Extended :obj:<code>sparse.einsum</code> support (:pr:<code>579</code> thanks :ghuser:<code>HadrienNU</code>)</li>
 <li>General code clean-up (:pr:<code>586</code> thanks :ghuser:<code>MHRasmy</code>, :pr:<code>598</code> thanks :ghuser:<code>jamestwebber</code>)</li>
 <li>Bug fixes with respect to NumPy compatibility  (:pr:<code>598</code> thanks :ghuser:<code>hameerabbasi</code>, :pr:<code>609</code> thanks :ghuser:<code>Illviljan</code>, :pr:<code>620</code> thanks :ghuser:<code>mtsokol</code>)</li>

@@ -3728,7 +3728,7 @@ Should have shape (number of dimensions, number of non-zeros).</p>
             <td>
               <div class="doc-md-description">
                 <p>An array of Values. A scalar can also be supplied if the data is the same across
-all coordinates. If not given, defers to :obj:<code>as_coo</code>.</p>
+all coordinates. If not given, defers to <a class="autorefs autorefs-internal" href="../as_coo/#sparse.as_coo">as_coo</a>.</p>
               </div>
             </td>
             <td>
@@ -3756,9 +3756,9 @@ all coordinates. If not given, defers to :obj:<code>as_coo</code>.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A value indicating whether the supplied value for :code:<code>coords</code> has
-duplicates. Note that setting this to <code>False</code> when :code:<code>coords</code> does have
-duplicates may result in undefined behaviour. See :obj:<code>COO.sum_duplicates</code></p>
+                <p>A value indicating whether the supplied value for <a class="autorefs autorefs-internal" href="#sparse.COO.coords">coords</a> has
+duplicates. Note that setting this to <code>False</code> when <code>coords</code> does have
+duplicates may result in undefined behaviour. See <code>COO.sum_duplicates</code>.</p>
               </div>
             </td>
             <td>
@@ -3773,8 +3773,8 @@ duplicates may result in undefined behaviour. See :obj:<code>COO.sum_duplicates<
             <td>
               <div class="doc-md-description">
                 <p>A value indicating whether the values in <code>coords</code> are sorted. Note
-that setting this to <code>True</code> when :code:<code>coords</code> isn't sorted may
-result in undefined behaviour. See :obj:<code>COO.sort_indices</code>.</p>
+that setting this to <code>True</code> when <a class="autorefs autorefs-internal" href="#sparse.COO.coords">coords</a> isn't sorted may
+result in undefined behaviour. See <code>COO.sort_indices</code>.</p>
               </div>
             </td>
             <td>
@@ -3804,7 +3804,7 @@ result in undefined behaviour. See :obj:<code>COO.sort_indices</code>.</p>
             <td>
               <div class="doc-md-description">
                 <p>Whether to enable cacheing for various operations. See
-:obj:<code>COO.enable_caching</code></p>
+<code>COO.enable_caching</code>.</p>
               </div>
             </td>
             <td>
@@ -3856,7 +3856,7 @@ result in undefined behaviour. See :obj:<code>COO.sort_indices</code>.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>An array holding the values corresponding to :obj:<code>COO.coords</code>.</p>
+                <p>An array holding the values corresponding to <a class="autorefs autorefs-internal" href="#sparse.COO.coords">COO.coords</a>.</p>
               </div>
             </td>
           </tr>
@@ -3877,12 +3877,13 @@ result in undefined behaviour. See :obj:<code>COO.sort_indices</code>.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>DOK : A mostly write-only sparse array.
-as_coo : Convert any given format to :obj:<code>COO</code>.</p>
+  <div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">DOK</span><span class="o">][</span><span class="n">sparse.DOK</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">mostly</span><span class="w"> </span><span class="k">write</span><span class="o">-</span><span class="k">only</span><span class="w"> </span><span class="n">sparse</span><span class="w"> </span><span class="k">array</span><span class="p">.</span>
+<span class="o">[</span><span class="n">as_coo</span><span class="o">][</span><span class="n">sparse.as_coo</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="nf">Convert</span><span class="w"> </span><span class="ow">any</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="nf">format</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="o">[</span><span class="n">COO</span><span class="o">][</span><span class="n">sparse.COO</span><span class="o">]</span><span class="p">.</span>
+</code></pre></div>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <p>You can create :obj:<code>COO</code> objects from Numpy arrays.</p>
+    <p>You can create <a class="autorefs autorefs-internal" href="#sparse.COO">COO</a> objects from Numpy arrays.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">COO</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -3894,7 +3895,7 @@ as_coo : Convert any given format to :obj:<code>COO</code>.</p>
 <span class="go">array([[0, 1, 2, 2, 3],</span>
 <span class="go">       [0, 1, 2, 3, 3]])</span>
 </code></pre></div>
-    <p>:obj:<code>COO</code> objects support basic arithmetic and binary operations.</p>
+    <p><a class="autorefs autorefs-internal" href="#sparse.COO">COO</a> objects support basic arithmetic and binary operations.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x2</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">COO</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
@@ -3919,11 +3920,11 @@ as_coo : Convert any given format to :obj:<code>COO</code>.</p>
 <span class="go">       [0, 0, 1, 5],</span>
 <span class="go">       [0, 0, 0, 0]], dtype=uint8)</span>
 </code></pre></div>
-    <p>:obj:<code>COO</code> objects also support dot products and reductions.</p>
+    <p><a class="autorefs autorefs-internal" href="#sparse.COO">COO</a> objects also support dot products and reductions.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
 <span class="go">array([ 1,  1, 31,  6], dtype=uint64)</span>
 </code></pre></div>
-    <p>You can use Numpy :code:<code>ufunc</code> operations on :obj:<code>COO</code> arrays as well.</p>
+    <p>You can use Numpy <code>ufunc</code> operations on <a class="autorefs autorefs-internal" href="#sparse.COO">COO</a> arrays as well.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
 <span class="go">array([1, 1, 6, 1], dtype=uint64)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
@@ -3937,7 +3938,7 @@ fill value, such as the following.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="go">&lt;COO: shape=(4, 4), dtype=float16, nnz=5, fill_value=1.0&gt;</span>
 </code></pre></div>
-    <p>You can also create :obj:<code>COO</code> arrays from coordinates and data.</p>
+    <p>You can also create <a class="autorefs autorefs-internal" href="#sparse.COO">COO</a> arrays from coordinates and data.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">coords</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s4</span> <span class="o">=</span> <span class="n">COO</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -3974,7 +3975,7 @@ indices imply summation:</p>
 <span class="go">array([[4, 0],</span>
 <span class="go">       [0, 2]])</span>
 </code></pre></div>
-    <p>You can convert :obj:<code>DOK</code> arrays to :obj:<code>COO</code> arrays.</p>
+    <p>You can convert <a class="autorefs autorefs-internal" href="../DOK/#sparse.DOK">DOK</a> arrays to <a class="autorefs autorefs-internal" href="#sparse.COO">COO</a> arrays.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sparse</span> <span class="kn">import</span> <span class="n">DOK</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s6</span> <span class="o">=</span> <span class="n">DOK</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s6</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]</span>
@@ -5535,23 +5536,23 @@ indices imply summation:</p>
 <span class="sd">        Should have shape (number of dimensions, number of non-zeros).</span>
 <span class="sd">    data : numpy.ndarray (COO.nnz,)</span>
 <span class="sd">        An array of Values. A scalar can also be supplied if the data is the same across</span>
-<span class="sd">        all coordinates. If not given, defers to :obj:`as_coo`.</span>
+<span class="sd">        all coordinates. If not given, defers to [as_coo][sparse.as_coo].</span>
 <span class="sd">    shape : tuple[int] (COO.ndim,)</span>
 <span class="sd">        The shape of the array.</span>
 <span class="sd">    has_duplicates : bool, optional</span>
-<span class="sd">        A value indicating whether the supplied value for :code:`coords` has</span>
-<span class="sd">        duplicates. Note that setting this to `False` when :code:`coords` does have</span>
-<span class="sd">        duplicates may result in undefined behaviour. See :obj:`COO.sum_duplicates`</span>
+<span class="sd">        A value indicating whether the supplied value for [coords][sparse.COO.coords] has</span>
+<span class="sd">        duplicates. Note that setting this to `False` when `coords` does have</span>
+<span class="sd">        duplicates may result in undefined behaviour. See `COO.sum_duplicates`.</span>
 <span class="sd">    sorted : bool, optional</span>
 <span class="sd">        A value indicating whether the values in `coords` are sorted. Note</span>
-<span class="sd">        that setting this to `True` when :code:`coords` isn&#39;t sorted may</span>
-<span class="sd">        result in undefined behaviour. See :obj:`COO.sort_indices`.</span>
+<span class="sd">        that setting this to `True` when [coords][sparse.COO.coords] isn&#39;t sorted may</span>
+<span class="sd">        result in undefined behaviour. See `COO.sort_indices`.</span>
 <span class="sd">    prune : bool, optional</span>
 <span class="sd">        A flag indicating whether or not we should prune any fill-values present in</span>
-<span class="sd">        ``data``.</span>
+<span class="sd">        `data`.</span>
 <span class="sd">    cache : bool, optional</span>
 <span class="sd">        Whether to enable cacheing for various operations. See</span>
-<span class="sd">        :obj:`COO.enable_caching`</span>
+<span class="sd">        `COO.enable_caching`.</span>
 <span class="sd">    fill_value: scalar, optional</span>
 <span class="sd">        The fill value for this array.</span>
 
@@ -5560,18 +5561,18 @@ indices imply summation:</p>
 <span class="sd">    coords : numpy.ndarray (ndim, nnz)</span>
 <span class="sd">        An array holding the coordinates of every nonzero element.</span>
 <span class="sd">    data : numpy.ndarray (nnz,)</span>
-<span class="sd">        An array holding the values corresponding to :obj:`COO.coords`.</span>
+<span class="sd">        An array holding the values corresponding to [COO.coords][sparse.COO.coords].</span>
 <span class="sd">    shape : tuple[int] (ndim,)</span>
 <span class="sd">        The dimensions of this array.</span>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    DOK : A mostly write-only sparse array.</span>
-<span class="sd">    as_coo : Convert any given format to :obj:`COO`.</span>
+<span class="sd">        [DOK][sparse.DOK]: A mostly write-only sparse array.</span>
+<span class="sd">        [as_coo][sparse.as_coo]: Convert any given format to [COO][sparse.COO].</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    You can create :obj:`COO` objects from Numpy arrays.</span>
+<span class="sd">    You can create [COO][sparse.COO] objects from Numpy arrays.</span>
 
 <span class="sd">    &gt;&gt;&gt; x = np.eye(4, dtype=np.uint8)</span>
 <span class="sd">    &gt;&gt;&gt; x[2, 3] = 5</span>
@@ -5584,7 +5585,7 @@ indices imply summation:</p>
 <span class="sd">    array([[0, 1, 2, 2, 3],</span>
 <span class="sd">           [0, 1, 2, 3, 3]])</span>
 
-<span class="sd">    :obj:`COO` objects support basic arithmetic and binary operations.</span>
+<span class="sd">    [COO][sparse.COO] objects support basic arithmetic and binary operations.</span>
 
 <span class="sd">    &gt;&gt;&gt; x2 = np.eye(4, dtype=np.uint8)</span>
 <span class="sd">    &gt;&gt;&gt; x2[3, 2] = 5</span>
@@ -5611,12 +5612,12 @@ indices imply summation:</p>
 <span class="sd">           [0, 0, 1, 5],</span>
 <span class="sd">           [0, 0, 0, 0]], dtype=uint8)</span>
 
-<span class="sd">    :obj:`COO` objects also support dot products and reductions.</span>
+<span class="sd">    [COO][sparse.COO] objects also support dot products and reductions.</span>
 
 <span class="sd">    &gt;&gt;&gt; s.dot(s.T).sum(axis=0).todense()  # doctest: +NORMALIZE_WHITESPACE</span>
 <span class="sd">    array([ 1,  1, 31,  6], dtype=uint64)</span>
 
-<span class="sd">    You can use Numpy :code:`ufunc` operations on :obj:`COO` arrays as well.</span>
+<span class="sd">    You can use Numpy `ufunc` operations on [COO][sparse.COO] arrays as well.</span>
 
 <span class="sd">    &gt;&gt;&gt; np.sum(s, axis=1).todense()  # doctest: +NORMALIZE_WHITESPACE</span>
 <span class="sd">    array([1, 1, 6, 1], dtype=uint64)</span>
@@ -5632,7 +5633,7 @@ indices imply summation:</p>
 <span class="sd">    &gt;&gt;&gt; np.exp(s)</span>
 <span class="sd">    &lt;COO: shape=(4, 4), dtype=float16, nnz=5, fill_value=1.0&gt;</span>
 
-<span class="sd">    You can also create :obj:`COO` arrays from coordinates and data.</span>
+<span class="sd">    You can also create [COO][sparse.COO] arrays from coordinates and data.</span>
 
 <span class="sd">    &gt;&gt;&gt; coords = [[0, 0, 0, 1, 1], [0, 1, 2, 0, 3], [0, 3, 2, 0, 1]]</span>
 <span class="sd">    &gt;&gt;&gt; data = [1, 2, 3, 4, 5]</span>
@@ -5673,7 +5674,7 @@ indices imply summation:</p>
 <span class="sd">    array([[4, 0],</span>
 <span class="sd">           [0, 2]])</span>
 
-<span class="sd">    You can convert :obj:`DOK` arrays to :obj:`COO` arrays.</span>
+<span class="sd">    You can convert [DOK][sparse.DOK] arrays to [COO][sparse.COO] arrays.</span>
 
 <span class="sd">    &gt;&gt;&gt; from sparse import DOK</span>
 <span class="sd">    &gt;&gt;&gt; s6 = DOK((5, 5), dtype=np.int64)</span>
@@ -7164,8 +7165,9 @@ indices imply summation:</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>DOK.ndim : Equivalent property for :obj:<code>DOK</code> arrays.
-numpy.ndarray.ndim : Numpy equivalent property.</p>
+  <div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">DOK.ndim</span><span class="o">][</span><span class="n">sparse.DOK.ndim</span><span class="o">]</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">Equivalent</span><span class="w"> </span><span class="n">property</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="o">[</span><span class="n">DOK</span><span class="o">][</span><span class="n">sparse.DOK</span><span class="o">]</span><span class="w"> </span><span class="n">arrays</span><span class="p">.</span>
+<span class="o">[</span><span class="n">numpy.ndarray.ndim</span><span class="o">]</span><span class="err">[]</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">Numpy</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">property</span><span class="p">.</span>
+</code></pre></div>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
@@ -7226,7 +7228,8 @@ numpy.ndarray.ndim : Numpy equivalent property.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>numpy.ndarray.size : Numpy equivalent property.</p>
+  <div class="codehilite"><pre><span></span><code>[numpy.ndarray.size][] : Numpy equivalent property.
+</code></pre></div>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
@@ -7285,8 +7288,9 @@ numpy.ndarray.ndim : Numpy equivalent property.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>COO.size : Number of elements.
-COO.nnz : Number of nonzero elements.</p>
+  <div class="codehilite"><pre><span></span><code>COO.size : Number of elements.
+COO.nnz : Number of nonzero elements.
+</code></pre></div>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>

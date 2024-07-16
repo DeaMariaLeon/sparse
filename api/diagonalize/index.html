@@ -2724,7 +2724,7 @@ API may change in the future.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x_diag</span><span class="o">.</span><span class="n">shape</span>
 <span class="go">(2, 3, 4, 3)</span>
 </code></pre></div>
-    <p>:obj:<code>diagonalize</code> is the inverse of :obj:<code>diagonal</code></p>
+    <p><a class="autorefs autorefs-internal" href="#sparse.diagonalize">diagonalize</a> is the inverse of <a class="autorefs autorefs-internal" href="../diagonal/#sparse.diagonal">diagonal</a></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">density</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a_diag</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">diagonalize</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">sparse</span><span class="o">.</span><span class="n">diagonal</span><span class="p">(</span><span class="n">a_diag</span><span class="p">,</span> <span class="n">axis1</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis2</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="n">a</span><span class="o">.</span><span class="n">transpose</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
@@ -2844,7 +2844,7 @@ API may change in the future.</p>
 <span class="sd">    &gt;&gt;&gt; x_diag.shape</span>
 <span class="sd">    (2, 3, 4, 3)</span>
 
-<span class="sd">    :obj:`diagonalize` is the inverse of :obj:`diagonal`</span>
+<span class="sd">    [diagonalize][sparse.diagonalize] is the inverse of [diagonal][sparse.diagonal]</span>
 
 <span class="sd">    &gt;&gt;&gt; a = sparse.random((3, 3, 3, 3, 3), density=0.3)</span>
 <span class="sd">    &gt;&gt;&gt; a_diag = sparse.diagonalize(a, axis=2)</span>

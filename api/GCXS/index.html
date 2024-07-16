@@ -4511,12 +4511,14 @@ the data array.</p>
 <span class="normal">841</span>
 <span class="normal">842</span>
 <span class="normal">843</span>
-<span class="normal">844</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">GCXS</span><span class="p">(</span><span class="n">SparseArray</span><span class="p">,</span> <span class="n">NDArrayOperatorsMixin</span><span class="p">):</span>
+<span class="normal">844</span>
+<span class="normal">845</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">GCXS</span><span class="p">(</span><span class="n">SparseArray</span><span class="p">,</span> <span class="n">NDArrayOperatorsMixin</span><span class="p">):</span>
 <span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A sparse multidimensional array.</span>
 
 <span class="sd">    This is stored in GCXS format, a generalization of the GCRS/GCCS formats</span>
-<span class="sd">    from [Efficient storage scheme for n-dimensional sparse array: GCRS/GCCS](https://ieeexplore.ieee.org/document/7237032). GCXS generalizes the CRS/CCS</span>
+<span class="sd">    from [Efficient storage scheme for n-dimensional sparse array: GCRS/GCCS](</span>
+<span class="sd">    https://ieeexplore.ieee.org/document/7237032). GCXS generalizes the CRS/CCS</span>
 <span class="sd">    sparse matrix formats.</span>
 
 <span class="sd">    For arrays with ndim == 2, GCXS is the same CSR/CSC.</span>
@@ -8408,8 +8410,7 @@ copied. Set to <code>False</code> to only make a shallow copy.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">188</span>
-<span class="normal">189</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">189</span>
 <span class="normal">190</span>
 <span class="normal">191</span>
 <span class="normal">192</span>
@@ -8417,7 +8418,8 @@ copied. Set to <code>False</code> to only make a shallow copy.</p>
 <span class="normal">194</span>
 <span class="normal">195</span>
 <span class="normal">196</span>
-<span class="normal">197</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="normal">197</span>
+<span class="normal">198</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a copy of the array.</span>
 
 <span class="sd">    Parameters</span>
@@ -8450,10 +8452,10 @@ copied. Set to <code>False</code> to only make a shallow copy.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">199</span>
-<span class="normal">200</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">200</span>
 <span class="normal">201</span>
-<span class="normal">202</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">202</span>
+<span class="normal">203</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">from_numpy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx_dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">coo</span> <span class="o">=</span> <span class="n">COO</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span> <span class="n">idx_dtype</span><span class="o">=</span><span class="n">idx_dtype</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_coo</span><span class="p">(</span><span class="n">coo</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="p">,</span> <span class="n">idx_dtype</span><span class="p">)</span>
@@ -8480,10 +8482,10 @@ copied. Set to <code>False</code> to only make a shallow copy.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">204</span>
-<span class="normal">205</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">205</span>
 <span class="normal">206</span>
-<span class="normal">207</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">207</span>
+<span class="normal">208</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">from_coo</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx_dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">)</span> <span class="o">=</span> <span class="n">_from_coo</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="p">,</span> <span class="n">idx_dtype</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="o">=</span><span class="n">compressed_axes</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">)</span>
@@ -8510,13 +8512,13 @@ copied. Set to <code>False</code> to only make a shallow copy.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">209</span>
-<span class="normal">210</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">210</span>
 <span class="normal">211</span>
 <span class="normal">212</span>
 <span class="normal">213</span>
 <span class="normal">214</span>
-<span class="normal">215</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">215</span>
+<span class="normal">216</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">from_scipy_sparse</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="s2">&quot;csc&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">((</span><span class="n">x</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">indptr</span><span class="p">),</span> <span class="n">shape</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,),</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">)</span>
@@ -8546,13 +8548,13 @@ copied. Set to <code>False</code> to only make a shallow copy.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">217</span>
-<span class="normal">218</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">218</span>
 <span class="normal">219</span>
 <span class="normal">220</span>
 <span class="normal">221</span>
 <span class="normal">222</span>
-<span class="normal">223</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">223</span>
+<span class="normal">224</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">from_iter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx_dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_coo</span><span class="p">(</span>
         <span class="n">COO</span><span class="o">.</span><span class="n">from_iter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">),</span>
@@ -8604,8 +8606,7 @@ a scipy.sparse.csc_matrix to a scipy.sparse.csr_matrix.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">384</span>
-<span class="normal">385</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">385</span>
 <span class="normal">386</span>
 <span class="normal">387</span>
 <span class="normal">388</span>
@@ -8639,7 +8640,8 @@ a scipy.sparse.csc_matrix to a scipy.sparse.csr_matrix.</p>
 <span class="normal">416</span>
 <span class="normal">417</span>
 <span class="normal">418</span>
-<span class="normal">419</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">change_compressed_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_compressed_axes</span><span class="p">):</span>
+<span class="normal">419</span>
+<span class="normal">420</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">change_compressed_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_compressed_axes</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a new array with specified compressed axes. This operation is similar to converting</span>
 <span class="sd">    a scipy.sparse.csc_matrix to a scipy.sparse.csr_matrix.</span>
@@ -8719,8 +8721,7 @@ a scipy.sparse.csc_matrix to a scipy.sparse.csr_matrix.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">421</span>
-<span class="normal">422</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">422</span>
 <span class="normal">423</span>
 <span class="normal">424</span>
 <span class="normal">425</span>
@@ -8754,7 +8755,8 @@ a scipy.sparse.csc_matrix to a scipy.sparse.csr_matrix.</p>
 <span class="normal">453</span>
 <span class="normal">454</span>
 <span class="normal">455</span>
-<span class="normal">456</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">tocoo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">456</span>
+<span class="normal">457</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">tocoo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert this [GCXS][sparse.GCXS] array to a [COO][sparse.COO].</span>
 
@@ -8845,8 +8847,7 @@ is large.</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">458</span>
-<span class="normal">459</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">459</span>
 <span class="normal">460</span>
 <span class="normal">461</span>
 <span class="normal">462</span>
@@ -8871,7 +8872,8 @@ is large.</p>
 <span class="normal">481</span>
 <span class="normal">482</span>
 <span class="normal">483</span>
-<span class="normal">484</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">todense</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">484</span>
+<span class="normal">485</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">todense</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert this [GCXS][sparse.GCXS] array to a dense [numpy.ndarray][]. Note that</span>
 <span class="sd">    this may take a large amount of memory if the [GCXS][sparse.GCXS] object&#39;s `shape`</span>
@@ -8917,10 +8919,10 @@ is large.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">486</span>
-<span class="normal">487</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">487</span>
 <span class="normal">488</span>
-<span class="normal">489</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">todok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">489</span>
+<span class="normal">490</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">todok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">DOK</span>
 
     <span class="k">return</span> <span class="n">DOK</span><span class="o">.</span><span class="n">from_coo</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tocoo</span><span class="p">())</span>  <span class="c1"># probably a temporary solution</span>
@@ -9030,8 +9032,7 @@ is large.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">491</span>
-<span class="normal">492</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">492</span>
 <span class="normal">493</span>
 <span class="normal">494</span>
 <span class="normal">495</span>
@@ -9060,7 +9061,8 @@ is large.</p>
 <span class="normal">518</span>
 <span class="normal">519</span>
 <span class="normal">520</span>
-<span class="normal">521</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">to_scipy_sparse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">accept_fv</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal">521</span>
+<span class="normal">522</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">to_scipy_sparse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">accept_fv</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converts this [GCXS][sparse.GCXS] object into a [scipy.sparse.csr_matrix][] or [scipy.sparse.csc_matrix][].</span>
 
@@ -9187,8 +9189,7 @@ is large.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">523</span>
-<span class="normal">524</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">524</span>
 <span class="normal">525</span>
 <span class="normal">526</span>
 <span class="normal">527</span>
@@ -9228,7 +9229,8 @@ is large.</p>
 <span class="normal">561</span>
 <span class="normal">562</span>
 <span class="normal">563</span>
-<span class="normal">564</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">asformat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="normal">564</span>
+<span class="normal">565</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">asformat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert this sparse array to a given format.</span>
 <span class="sd">    Parameters</span>
@@ -9389,8 +9391,7 @@ costly.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">566</span>
-<span class="normal">567</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">567</span>
 <span class="normal">568</span>
 <span class="normal">569</span>
 <span class="normal">570</span>
@@ -9420,7 +9421,8 @@ costly.</p>
 <span class="normal">594</span>
 <span class="normal">595</span>
 <span class="normal">596</span>
-<span class="normal">597</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">maybe_densify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">min_density</span><span class="o">=</span><span class="mf">0.25</span><span class="p">):</span>
+<span class="normal">597</span>
+<span class="normal">598</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">maybe_densify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">min_density</span><span class="o">=</span><span class="mf">0.25</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converts this [GCXS][sparse.GCXS] array to a [numpy.ndarray][] if not too</span>
 <span class="sd">    costly.</span>
@@ -9502,8 +9504,7 @@ Numpy and isn't actually supported.</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">599</span>
-<span class="normal">600</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">600</span>
 <span class="normal">601</span>
 <span class="normal">602</span>
 <span class="normal">603</span>
@@ -9519,7 +9520,8 @@ Numpy and isn't actually supported.</p>
 <span class="normal">613</span>
 <span class="normal">614</span>
 <span class="normal">615</span>
-<span class="normal">616</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">):</span>
+<span class="normal">616</span>
+<span class="normal">617</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a new [GCXS][sparse.GCXS] array that is a flattened version of this array.</span>
 
@@ -9639,8 +9641,7 @@ Numpy and isn't actually supported.</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">618</span>
-<span class="normal">619</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">619</span>
 <span class="normal">620</span>
 <span class="normal">621</span>
 <span class="normal">622</span>
@@ -9699,7 +9700,8 @@ Numpy and isn't actually supported.</p>
 <span class="normal">675</span>
 <span class="normal">676</span>
 <span class="normal">677</span>
-<span class="normal">678</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reshape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal">678</span>
+<span class="normal">679</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reshape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a new [GCXS][sparse.GCXS] array that is a reshaped version of this array.</span>
 
@@ -9857,8 +9859,7 @@ by default.</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">684</span>
-<span class="normal">685</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">685</span>
 <span class="normal">686</span>
 <span class="normal">687</span>
 <span class="normal">688</span>
@@ -9910,7 +9911,8 @@ by default.</p>
 <span class="normal">734</span>
 <span class="normal">735</span>
 <span class="normal">736</span>
-<span class="normal">737</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal">737</span>
+<span class="normal">738</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a new array which has the order of the axes switched.</span>
 
@@ -10070,8 +10072,7 @@ then a dense array is returned, otherwise, a sparse array.</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">766</span>
-<span class="normal">767</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">767</span>
 <span class="normal">768</span>
 <span class="normal">769</span>
 <span class="normal">770</span>
@@ -10098,7 +10099,8 @@ then a dense array is returned, otherwise, a sparse array.</p>
 <span class="normal">791</span>
 <span class="normal">792</span>
 <span class="normal">793</span>
-<span class="normal">794</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="normal">794</span>
+<span class="normal">795</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Performs the equivalent of `x.dot(y)` for [GCXS][sparse.GCXS].</span>
 
@@ -10146,8 +10148,8 @@ then a dense array is returned, otherwise, a sparse array.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">840</span>
-<span class="normal">841</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">isinf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">841</span>
+<span class="normal">842</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">isinf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tocoo</span><span class="p">()</span><span class="o">.</span><span class="n">isinf</span><span class="p">()</span><span class="o">.</span><span class="n">asformat</span><span class="p">(</span><span class="s2">&quot;gcxs&quot;</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">compressed_axes</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -10168,8 +10170,8 @@ then a dense array is returned, otherwise, a sparse array.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_compressed/compressed.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">843</span>
-<span class="normal">844</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">isnan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">844</span>
+<span class="normal">845</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">isnan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tocoo</span><span class="p">()</span><span class="o">.</span><span class="n">isnan</span><span class="p">()</span><span class="o">.</span><span class="n">asformat</span><span class="p">(</span><span class="s2">&quot;gcxs&quot;</span><span class="p">,</span> <span class="n">compressed_axes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">compressed_axes</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>

@@ -2759,8 +2759,10 @@
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>:obj:<code>COO.sum</code> : Function without <code>NaN</code> skipping.
-numpy.nansum : Equivalent Numpy function.</p>
+  <ul>
+<li><a class="autorefs autorefs-internal" href="../COO/#sparse.COO.sum">COO.sum</a> : Function without <code>NaN</code> skipping.</li>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.nansum.html#numpy.nansum">numpy.nansum</a> : Equivalent Numpy function.</li>
+</ul>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_coo/common.py</code></summary>
@@ -2813,8 +2815,8 @@ numpy.nansum : Equivalent Numpy function.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    :obj:`COO.sum` : Function without ``NaN`` skipping.</span>
-<span class="sd">    numpy.nansum : Equivalent Numpy function.</span>
+<span class="sd">    - [COO.sum][sparse.COO.sum] : Function without ``NaN`` skipping.</span>
+<span class="sd">    - [numpy.nansum][] : Equivalent Numpy function.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">assert</span> <span class="n">out</span> <span class="ow">is</span> <span class="kc">None</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">asCOO</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;nansum&quot;</span><span class="p">)</span>

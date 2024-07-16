@@ -2661,7 +2661,7 @@
     <div class="doc doc-contents first">
 
       <p>Performs an <code>NaN</code> skipping reduction on this array. See the documentation
-on :obj:<code>COO.reduce</code> for examples.</p>
+on <a class="autorefs autorefs-internal" href="../COO/#sparse.COO.reduce">COO.reduce</a> for examples.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -2812,7 +2812,7 @@ Note that some <code>ufunc</code> objects don't have this, so it may be necessar
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>COO.reduce : Similar method without <code>NaN</code> skipping functionality.</p>
+  <p><a class="autorefs autorefs-internal" href="../COO/#sparse.COO.reduce">COO.reduce</a> : Similar method without <code>NaN</code> skipping functionality.</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_coo/common.py</code></summary>
@@ -2854,8 +2854,8 @@ Note that some <code>ufunc</code> objects don't have this, so it may be necessar
 <span class="normal">719</span>
 <span class="normal">720</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">nanreduce</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">identity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Performs an ``NaN`` skipping reduction on this array. See the documentation</span>
-<span class="sd">    on :obj:`COO.reduce` for examples.</span>
+<span class="sd">    Performs an `NaN` skipping reduction on this array. See the documentation</span>
+<span class="sd">    on [COO.reduce][sparse.COO.reduce] for examples.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -2885,7 +2885,7 @@ Note that some <code>ufunc</code> objects don't have this, so it may be necessar
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    COO.reduce : Similar method without ``NaN`` skipping functionality.</span>
+<span class="sd">    [COO.reduce][sparse.COO.reduce] : Similar method without `NaN` skipping functionality.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">arr</span> <span class="o">=</span> <span class="n">_replace_nan</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">method</span><span class="o">.</span><span class="n">identity</span> <span class="k">if</span> <span class="n">identity</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">identity</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>

@@ -2660,7 +2660,7 @@
 <a id="sparse.as_coo"></a>
     <div class="doc doc-contents first">
 
-      <p>Converts any given format to :obj:<code>COO</code>. See the "See Also" section for details.</p>
+      <p>Converts any given format to <a class="autorefs autorefs-internal" href="../COO/#sparse.COO">COO</a>. See the "See Also" section for details.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -2721,7 +2721,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The converted :obj:<code>COO</code> array.</p>
+                <p>The converted <a class="autorefs autorefs-internal" href="../COO/#sparse.COO">COO</a> array.</p>
               </div>
             </td>
           </tr>
@@ -2731,14 +2731,16 @@
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>SparseArray.asformat :
-    A utility function to convert between formats in this library.
-COO.from_numpy :
-    Convert a Numpy array to :obj:<code>COO</code>.
-COO.from_scipy_sparse :
-    Convert a SciPy sparse matrix to :obj:<code>COO</code>.
-COO.from_iter :
-    Convert an iterable to :obj:<code>COO</code>.</p>
+  <ul>
+<li><a class="autorefs autorefs-internal" href="../SparseArray/#sparse.SparseArray.asformat">SparseArray.asformat</a> :
+    A utility function to convert between formats in this library.</li>
+<li><a class="autorefs autorefs-internal" href="../COO/#sparse.COO.from_numpy">COO.from_numpy</a> :
+    Convert a Numpy array to <a class="autorefs autorefs-internal" href="../COO/#sparse.COO">COO</a>.</li>
+<li><a class="autorefs autorefs-internal" href="../COO/#sparse.COO.from_scipy_sparse">COO.from_scipy_sparse</a> :
+    Convert a SciPy sparse matrix to <a class="autorefs autorefs-internal" href="../COO/#sparse.COO">COO</a>.</li>
+<li><a class="autorefs autorefs-internal" href="../COO/#sparse.COO.from_iter">COO.from_iter</a> :
+    Convert an iterable to <a class="autorefs autorefs-internal" href="../COO/#sparse.COO">COO</a>.</li>
+</ul>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_coo/core.py</code></summary>
@@ -2794,7 +2796,7 @@ COO.from_iter :
 <span class="normal">1606</span>
 <span class="normal">1607</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">as_coo</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx_dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Converts any given format to :obj:`COO`. See the &quot;See Also&quot; section for details.</span>
+<span class="sd">    Converts any given format to [COO][sparse.COO]. See the &quot;See Also&quot; section for details.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -2806,18 +2808,18 @@ COO.from_iter :
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    out : COO</span>
-<span class="sd">        The converted :obj:`COO` array.</span>
+<span class="sd">        The converted [COO][sparse.COO] array.</span>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    SparseArray.asformat :</span>
+<span class="sd">    - [SparseArray.asformat][sparse.SparseArray.asformat] :</span>
 <span class="sd">        A utility function to convert between formats in this library.</span>
-<span class="sd">    COO.from_numpy :</span>
-<span class="sd">        Convert a Numpy array to :obj:`COO`.</span>
-<span class="sd">    COO.from_scipy_sparse :</span>
-<span class="sd">        Convert a SciPy sparse matrix to :obj:`COO`.</span>
-<span class="sd">    COO.from_iter :</span>
-<span class="sd">        Convert an iterable to :obj:`COO`.</span>
+<span class="sd">    - [COO.from_numpy][sparse.COO.from_numpy] :</span>
+<span class="sd">        Convert a Numpy array to [COO][sparse.COO].</span>
+<span class="sd">    - [COO.from_scipy_sparse][sparse.COO.from_scipy_sparse] :</span>
+<span class="sd">        Convert a SciPy sparse matrix to [COO][sparse.COO].</span>
+<span class="sd">    - [COO.from_iter][sparse.COO.from_iter] :</span>
+<span class="sd">        Convert an iterable to [COO][sparse.COO].</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">.._common</span> <span class="kn">import</span> <span class="n">_is_scipy_sparse_obj</span>
 

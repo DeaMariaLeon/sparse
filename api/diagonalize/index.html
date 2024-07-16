@@ -2661,8 +2661,11 @@
     <div class="doc doc-contents first">
 
       <p>Diagonalize a COO array. The new dimension is appended at the end.</p>
-<p>.. WARNING:: :obj:<code>diagonalize</code> is not :obj:<code>numpy</code> compatible as there is no direct :obj:<code>numpy</code> equivalent. The
-  API may change in the future.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><a class="autorefs autorefs-internal" href="#sparse.diagonalize">diagonalize</a> is not <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy">numpy</a> compatible as there is no direct <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy">numpy</a> equivalent. The
+API may change in the future.</p>
+</div>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -2754,7 +2757,7 @@
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>:obj:<code>numpy.diag</code> : NumPy equivalent for 1D array</p>
+  <p><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.diag.html#numpy.diag">numpy.diag</a> : NumPy equivalent for 1D array</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_coo/common.py</code></summary>
@@ -2809,12 +2812,16 @@
 <span class="normal">917</span>
 <span class="normal">918</span>
 <span class="normal">919</span>
-<span class="normal">920</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">diagonalize</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="normal">920</span>
+<span class="normal">921</span>
+<span class="normal">922</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">diagonalize</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Diagonalize a COO array. The new dimension is appended at the end.</span>
 
-<span class="sd">    .. WARNING:: :obj:`diagonalize` is not :obj:`numpy` compatible as there is no direct :obj:`numpy` equivalent. The</span>
-<span class="sd">      API may change in the future.</span>
+<span class="sd">    !!! warning</span>
+
+<span class="sd">        [diagonalize][sparse.diagonalize] is not [numpy][] compatible as there is no direct [numpy][] equivalent. The</span>
+<span class="sd">        API may change in the future.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -2851,7 +2858,7 @@
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    :obj:`numpy.diag` : NumPy equivalent for 1D array</span>
+<span class="sd">    [numpy.diag][] : NumPy equivalent for 1D array</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">.core</span> <span class="kn">import</span> <span class="n">COO</span><span class="p">,</span> <span class="n">as_coo</span>
 

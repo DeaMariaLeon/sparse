@@ -2745,11 +2745,13 @@ already there</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>load_npz
-scipy.sparse.save_npz
-scipy.sparse.load_npz
-numpy.savez
-numpy.load</p>
+  <ul>
+<li><a class="autorefs autorefs-internal" href="../load_npz/#sparse.load_npz">load_npz</a></li>
+<li><a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.save_npz.html#scipy.sparse.save_npz">scipy.sparse.save_npz</a></li>
+<li><a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.load_npz.html#scipy.sparse.load_npz">scipy.sparse.load_npz</a></li>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.savez.html#numpy.savez">numpy.savez</a></li>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.load.html#numpy.load">numpy.load</a></li>
+</ul>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_io.py</code></summary>
@@ -2815,17 +2817,17 @@ numpy.load</p>
 <span class="normal">66</span>
 <span class="normal">67</span>
 <span class="normal">68</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_npz</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">compressed</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save a sparse matrix to disk in numpy&#39;s ``.npz`` format.</span>
-<span class="sd">    Note: This is not binary compatible with scipy&#39;s ``save_npz()``.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save a sparse matrix to disk in numpy&#39;s `.npz` format.</span>
+<span class="sd">    Note: This is not binary compatible with scipy&#39;s `save_npz()`.</span>
 <span class="sd">    This binary format is not currently stable. Will save a file</span>
-<span class="sd">    that can only be opend with this package&#39;s ``load_npz()``.</span>
+<span class="sd">    that can only be opend with this package&#39;s `load_npz()`.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    filename : string or file</span>
 <span class="sd">        Either the file name (string) or an open file (file-like object)</span>
 <span class="sd">        where the data will be saved. If file is a string or a Path, the</span>
-<span class="sd">        ``.npz`` extension will be appended to the file name if it is not</span>
+<span class="sd">        `.npz` extension will be appended to the file name if it is not</span>
 <span class="sd">        already there</span>
 <span class="sd">    matrix : SparseArray</span>
 <span class="sd">        The matrix to save to disk</span>
@@ -2851,11 +2853,11 @@ numpy.load</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    load_npz</span>
-<span class="sd">    scipy.sparse.save_npz</span>
-<span class="sd">    scipy.sparse.load_npz</span>
-<span class="sd">    numpy.savez</span>
-<span class="sd">    numpy.load</span>
+<span class="sd">    - [load_npz][sparse.load_npz]</span>
+<span class="sd">    - [scipy.sparse.save_npz][]</span>
+<span class="sd">    - [scipy.sparse.load_npz][]</span>
+<span class="sd">    - [numpy.savez][]</span>
+<span class="sd">    - [numpy.load][]</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 

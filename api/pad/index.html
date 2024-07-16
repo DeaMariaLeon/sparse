@@ -2660,7 +2660,7 @@
 <a id="sparse.pad"></a>
     <div class="doc doc-contents first">
 
-      <p>Performs the equivalent of :obj:<code>numpy.pad</code> for :obj:<code>SparseArray</code>. Note that
+      <p>Performs the equivalent of <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad">numpy.pad</a> for <a class="autorefs autorefs-internal" href="../SparseArray/#sparse.SparseArray">SparseArray</a>. Note that
 this function returns a new array instead of a view.</p>
 
 
@@ -2795,7 +2795,7 @@ shortcut for before = after = pad width for all axes.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>:obj:<code>numpy.pad</code> : NumPy equivalent function</p>
+  <p><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad">numpy.pad</a> : NumPy equivalent function</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_common.py</code></summary>
@@ -2860,7 +2860,7 @@ shortcut for before = after = pad width for all axes.</p>
 <span class="normal">2008</span>
 <span class="normal">2009</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pad</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">pad_width</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;constant&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Performs the equivalent of :obj:`numpy.pad` for :obj:`SparseArray`. Note that</span>
+<span class="sd">    Performs the equivalent of [numpy.pad][] for [SparseArray][sparse.SparseArray]. Note that</span>
 <span class="sd">    this function returns a new array instead of a view.</span>
 
 <span class="sd">    Parameters</span>
@@ -2894,7 +2894,7 @@ shortcut for before = after = pad width for all axes.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    :obj:`numpy.pad` : NumPy equivalent function</span>
+<span class="sd">    [numpy.pad][] : NumPy equivalent function</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">SparseArray</span><span class="p">):</span>

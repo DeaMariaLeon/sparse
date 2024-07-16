@@ -3475,7 +3475,7 @@ the first element.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The datatype of this array. Can be :code:<code>None</code> if no elements
+                <p>The datatype of this array. Can be <code>None</code> if no elements
 have been set yet.</p>
               </div>
             </td>
@@ -3509,11 +3509,11 @@ contain the nonzero entries.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>COO : A read-only sparse array.</p>
+  <p><a class="autorefs autorefs-internal" href="../COO/#sparse.COO">COO</a> : A read-only sparse array.</p>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <p>You can create :obj:<code>DOK</code> objects from Numpy arrays.</p>
+    <p>You can create <a class="autorefs autorefs-internal" href="#sparse.DOK">DOK</a> objects from Numpy arrays.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">DOK</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -3526,7 +3526,7 @@ contain the nonzero entries.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span>
 <span class="go">&lt;DOK: shape=(5, 5), dtype=int64, nnz=4, fill_value=0&gt;</span>
 </code></pre></div>
-    <p>You can convert :obj:<code>DOK</code> arrays to :obj:<code>COO</code> arrays, or :obj:<code>numpy.ndarray</code>
+    <p>You can convert <a class="autorefs autorefs-internal" href="#sparse.DOK">DOK</a> arrays to <a class="autorefs autorefs-internal" href="../COO/#sparse.COO">COO</a> arrays, or <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray">numpy.ndarray</a>
 objects.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sparse</span> <span class="kn">import</span> <span class="n">COO</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s3</span> <span class="o">=</span> <span class="n">COO</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
@@ -3546,7 +3546,7 @@ objects.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s5</span>
 <span class="go">&lt;DOK: shape=(4, 4), dtype=uint8, nnz=4, fill_value=0&gt;</span>
 </code></pre></div>
-    <p>You can also create :obj:<code>DOK</code> arrays from a shape and a dict of
+    <p>You can also create <a class="autorefs autorefs-internal" href="#sparse.DOK">DOK</a> arrays from a shape and a dict of
 values. Zeros are automatically ignored.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">values</span> <span class="o">=</span> <span class="p">{</span>
 <span class="gp">... </span>    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span> <span class="mi">4</span><span class="p">,</span>
@@ -4115,7 +4115,7 @@ values. Zeros are automatically ignored.</p>
 <span class="sd">    Attributes</span>
 <span class="sd">    ----------</span>
 <span class="sd">    dtype : numpy.dtype</span>
-<span class="sd">        The datatype of this array. Can be :code:`None` if no elements</span>
+<span class="sd">        The datatype of this array. Can be `None` if no elements</span>
 <span class="sd">        have been set yet.</span>
 <span class="sd">    shape : tuple[int]</span>
 <span class="sd">        The shape of this array.</span>
@@ -4125,11 +4125,11 @@ values. Zeros are automatically ignored.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    COO : A read-only sparse array.</span>
+<span class="sd">    [COO][sparse.COO] : A read-only sparse array.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    You can create :obj:`DOK` objects from Numpy arrays.</span>
+<span class="sd">    You can create [DOK][sparse.DOK] objects from Numpy arrays.</span>
 
 <span class="sd">    &gt;&gt;&gt; x = np.eye(5, dtype=np.uint8)</span>
 <span class="sd">    &gt;&gt;&gt; x[2, 3] = 5</span>
@@ -4144,7 +4144,7 @@ values. Zeros are automatically ignored.</p>
 <span class="sd">    &gt;&gt;&gt; s2</span>
 <span class="sd">    &lt;DOK: shape=(5, 5), dtype=int64, nnz=4, fill_value=0&gt;</span>
 
-<span class="sd">    You can convert :obj:`DOK` arrays to :obj:`COO` arrays, or :obj:`numpy.ndarray`</span>
+<span class="sd">    You can convert [DOK][sparse.DOK] arrays to [COO][sparse.COO] arrays, or [numpy.ndarray][]</span>
 <span class="sd">    objects.</span>
 
 <span class="sd">    &gt;&gt;&gt; from sparse import COO</span>
@@ -4165,7 +4165,7 @@ values. Zeros are automatically ignored.</p>
 <span class="sd">    &gt;&gt;&gt; s5</span>
 <span class="sd">    &lt;DOK: shape=(4, 4), dtype=uint8, nnz=4, fill_value=0&gt;</span>
 
-<span class="sd">    You can also create :obj:`DOK` arrays from a shape and a dict of</span>
+<span class="sd">    You can also create [DOK][sparse.DOK] arrays from a shape and a dict of</span>
 <span class="sd">    values. Zeros are automatically ignored.</span>
 
 <span class="sd">    &gt;&gt;&gt; values = {</span>
@@ -4220,7 +4220,7 @@ values. Zeros are automatically ignored.</p>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_scipy_sparse</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Create a :obj:`DOK` array from a :obj:`scipy.sparse.spmatrix`.</span>
+<span class="sd">        Create a [DOK][sparse.DOK] array from a [scipy.sparse.spmatrix][].</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -4232,7 +4232,7 @@ values. Zeros are automatically ignored.</p>
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        DOK</span>
-<span class="sd">            The equivalent :obj:`DOK` array.</span>
+<span class="sd">            The equivalent [DOK][sparse.DOK] array.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
@@ -4248,7 +4248,7 @@ values. Zeros are automatically ignored.</p>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_coo</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Get a :obj:`DOK` array from a :obj:`COO` array.</span>
+<span class="sd">        Get a [DOK][sparse.DOK] array from a [COO][sparse.COO] array.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -4258,7 +4258,7 @@ values. Zeros are automatically ignored.</p>
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        DOK</span>
-<span class="sd">            The equivalent :obj:`DOK` array.</span>
+<span class="sd">            The equivalent [DOK][sparse.DOK] array.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
@@ -4277,12 +4277,12 @@ values. Zeros are automatically ignored.</p>
 
     <span class="k">def</span> <span class="nf">to_coo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert this :obj:`DOK` array to a :obj:`COO` array.</span>
+<span class="sd">        Convert this [DOK][sparse.DOK] array to a [COO][sparse.COO] array.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        COO</span>
-<span class="sd">            The equivalent :obj:`COO` array.</span>
+<span class="sd">            The equivalent [COO][sparse.COO] array.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
@@ -4301,7 +4301,7 @@ values. Zeros are automatically ignored.</p>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_numpy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Get a :obj:`DOK` array from a Numpy array.</span>
+<span class="sd">        Get a [DOK][sparse.DOK] array from a Numpy array.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -4311,7 +4311,7 @@ values. Zeros are automatically ignored.</p>
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        DOK</span>
-<span class="sd">            The equivalent :obj:`DOK` array.</span>
+<span class="sd">            The equivalent [DOK][sparse.DOK] array.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
@@ -4342,9 +4342,9 @@ values. Zeros are automatically ignored.</p>
 
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
-<span class="sd">        COO.nnz : Equivalent :obj:`COO` array property.</span>
-<span class="sd">        numpy.count_nonzero : A similar Numpy function.</span>
-<span class="sd">        scipy.sparse.dok_matrix.nnz : The Scipy equivalent property.</span>
+<span class="sd">        - [COO.nnz][sparse.COO.nnz] : Equivalent [COO][sparse.COO] array property.</span>
+<span class="sd">        - [numpy.count_nonzero][] : A similar Numpy function.</span>
+<span class="sd">        - [scipy.sparse.coo_matrix.nnz][] : The Scipy equivalent property.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
@@ -4368,7 +4368,7 @@ values. Zeros are automatically ignored.</p>
 <span class="sd">            The storage format of this array.</span>
 <span class="sd">        See Also</span>
 <span class="sd">        -------</span>
-<span class="sd">        scipy.sparse.dok_matrix.format : The Scipy equivalent property.</span>
+<span class="sd">        [scipy.sparse.dok_matrix.format][] : The Scipy equivalent property.</span>
 <span class="sd">        Examples</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import sparse</span>
@@ -4394,7 +4394,7 @@ values. Zeros are automatically ignored.</p>
 
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
-<span class="sd">        numpy.ndarray.nbytes : The equivalent Numpy property.</span>
+<span class="sd">        [numpy.ndarray.nbytes][] : The equivalent Numpy property.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
@@ -4526,7 +4526,7 @@ values. Zeros are automatically ignored.</p>
 
     <span class="k">def</span> <span class="nf">todense</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert this :obj:`DOK` array into a Numpy array.</span>
+<span class="sd">        Convert this [DOK][sparse.DOK] array into a Numpy array.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -4535,8 +4535,8 @@ values. Zeros are automatically ignored.</p>
 
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
-<span class="sd">        COO.todense : Equivalent :obj:`COO` array method.</span>
-<span class="sd">        scipy.sparse.dok_matrix.todense : Equivalent Scipy method.</span>
+<span class="sd">        - [COO.todense][sparse.COO.todense] : Equivalent `COO` array method.</span>
+<span class="sd">        - [scipy.sparse.coo_matrix.todense][] : Equivalent Scipy method.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
@@ -4598,7 +4598,7 @@ values. Zeros are automatically ignored.</p>
 
     <span class="k">def</span> <span class="nf">reshape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Returns a new :obj:`DOK` array that is a reshaped version of this array.</span>
+<span class="sd">        Returns a new [DOK][sparse.DOK] array that is a reshaped version of this array.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -4612,11 +4612,11 @@ values. Zeros are automatically ignored.</p>
 
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
-<span class="sd">        numpy.ndarray.reshape : The equivalent Numpy function.</span>
+<span class="sd">        [numpy.ndarray.reshape][] : The equivalent Numpy function.</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        The :code:`order` parameter is provided just for compatibility with</span>
+<span class="sd">        The `order` parameter is provided just for compatibility with</span>
 <span class="sd">        Numpy and isn&#39;t actually supported.</span>
 
 <span class="sd">        Examples</span>
@@ -4748,9 +4748,10 @@ values. Zeros are automatically ignored.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">DOK.ndim</span><span class="o">][</span><span class="n">sparse.DOK.ndim</span><span class="o">]</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">Equivalent</span><span class="w"> </span><span class="n">property</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="o">[</span><span class="n">DOK</span><span class="o">][</span><span class="n">sparse.DOK</span><span class="o">]</span><span class="w"> </span><span class="n">arrays</span><span class="p">.</span>
-<span class="o">[</span><span class="n">numpy.ndarray.ndim</span><span class="o">]</span><span class="err">[]</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">Numpy</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">property</span><span class="p">.</span>
-</code></pre></div>
+  <ul>
+<li><a class="autorefs autorefs-internal" href="#sparse.DOK.ndim">DOK.ndim</a> : Equivalent property for <a class="autorefs autorefs-internal" href="#sparse.DOK">DOK</a> arrays.</li>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.ndim.html#numpy.ndarray.ndim">numpy.ndarray.ndim</a> : Numpy equivalent property.</li>
+</ul>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
@@ -4811,8 +4812,7 @@ values. Zeros are automatically ignored.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <div class="codehilite"><pre><span></span><code>[numpy.ndarray.size][] : Numpy equivalent property.
-</code></pre></div>
+  <p><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.size.html#numpy.ndarray.size">numpy.ndarray.size</a> : Numpy equivalent property.</p>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
@@ -4871,9 +4871,10 @@ values. Zeros are automatically ignored.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <div class="codehilite"><pre><span></span><code>COO.size : Number of elements.
-COO.nnz : Number of nonzero elements.
-</code></pre></div>
+  <ul>
+<li><a class="autorefs autorefs-internal" href="../COO/#sparse.COO.size">COO.size</a> : Number of elements.</li>
+<li><a class="autorefs autorefs-internal" href="../COO/#sparse.COO.nnz">COO.nnz</a> : Number of nonzero elements.</li>
+</ul>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
@@ -5005,8 +5006,10 @@ is complex, the output dtype is float.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>numpy.ndarray.real : NumPy equivalent attribute.
-numpy.real : NumPy equivalent function.</p>
+  <ul>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.real.html#numpy.ndarray.real">numpy.ndarray.real</a> : NumPy equivalent attribute.</li>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.real.html#numpy.real">numpy.real</a> : NumPy equivalent function.</li>
+</ul>
 </details>    </div>
 
 </div>
@@ -5067,8 +5070,10 @@ array is complex, the output dtype is float.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>numpy.ndarray.imag : NumPy equivalent attribute.
-numpy.imag : NumPy equivalent function.</p>
+  <ul>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.imag.html#numpy.ndarray.imag">numpy.ndarray.imag</a> : NumPy equivalent attribute.</li>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.imag.html#numpy.imag">numpy.imag</a> : NumPy equivalent function.</li>
+</ul>
 </details>    </div>
 
 </div>
@@ -5155,9 +5160,11 @@ numpy.imag : NumPy equivalent function.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>COO.nnz : Equivalent :obj:<code>COO</code> array property.
-numpy.count_nonzero : A similar Numpy function.
-scipy.sparse.dok_matrix.nnz : The Scipy equivalent property.</p>
+  <ul>
+<li><a class="autorefs autorefs-internal" href="../COO/#sparse.COO.nnz">COO.nnz</a> : Equivalent <a class="autorefs autorefs-internal" href="../COO/#sparse.COO">COO</a> array property.</li>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.count_nonzero.html#numpy.count_nonzero">numpy.count_nonzero</a> : A similar Numpy function.</li>
+<li><a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.nnz.html#scipy.sparse.coo_matrix.nnz">scipy.sparse.coo_matrix.nnz</a> : The Scipy equivalent property.</li>
+</ul>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
@@ -5217,7 +5224,7 @@ scipy.sparse.dok_matrix.nnz : The Scipy equivalent property.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>scipy.sparse.dok_matrix.format : The Scipy equivalent property.</p>
+  <p><a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.dok_matrix.format.html#scipy.sparse.dok_matrix.format">scipy.sparse.dok_matrix.format</a> : The Scipy equivalent property.</p>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
@@ -5278,7 +5285,7 @@ this may undercount the number of bytes due to the large constant overhead.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>numpy.ndarray.nbytes : The equivalent Numpy property.</p>
+  <p><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.nbytes.html#numpy.ndarray.nbytes">numpy.ndarray.nbytes</a> : The equivalent Numpy property.</p>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
@@ -5408,9 +5415,11 @@ this may undercount the number of bytes due to the large constant overhead.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>numpy.ufunc.reduce : A similar Numpy method.
-COO.reduce : This method implemented on COO arrays.
-GCXS.reduce : This method implemented on GCXS arrays.</p>
+  <ul>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.reduce.html#numpy.ufunc.reduce">numpy.ufunc.reduce</a> : A similar Numpy method.</li>
+<li><a class="autorefs autorefs-internal" href="../COO/#sparse.COO.reduce">COO.reduce</a> : This method implemented on COO arrays.</li>
+<li><a class="autorefs autorefs-internal" href="../GCXS/#sparse.GCXS.reduce">GCXS.reduce</a> : This method implemented on GCXS arrays.</li>
+</ul>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
@@ -5486,9 +5495,9 @@ GCXS.reduce : This method implemented on GCXS arrays.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    numpy.ufunc.reduce : A similar Numpy method.</span>
-<span class="sd">    COO.reduce : This method implemented on COO arrays.</span>
-<span class="sd">    GCXS.reduce : This method implemented on GCXS arrays.</span>
+<span class="sd">    - [numpy.ufunc.reduce][] : A similar Numpy method.</span>
+<span class="sd">    - [COO.reduce][sparse.COO.reduce] : This method implemented on COO arrays.</span>
+<span class="sd">    - [GCXS.reduce][sparse.GCXS.reduce] : This method implemented on GCXS arrays.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">axis</span> <span class="o">=</span> <span class="n">normalize_axis</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
     <span class="n">zero_reduce_result</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="n">reduce</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">fill_value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fill_value</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -5627,8 +5636,10 @@ GCXS.reduce : This method implemented on GCXS arrays.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>:obj:<code>numpy.sum</code> : Equivalent numpy function.
-scipy.sparse.coo_matrix.sum : Equivalent Scipy function.</p>
+  <ul>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.sum.html#numpy.sum">numpy.sum</a> : Equivalent numpy function.</li>
+<li><a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.sum.html#scipy.sparse.coo_matrix.sum">scipy.sparse.coo_matrix.sum</a> : Equivalent Scipy function.</li>
+</ul>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
@@ -5675,8 +5686,8 @@ scipy.sparse.coo_matrix.sum : Equivalent Scipy function.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    :obj:`numpy.sum` : Equivalent numpy function.</span>
-<span class="sd">    scipy.sparse.coo_matrix.sum : Equivalent Scipy function.</span>
+<span class="sd">    - [numpy.sum][] : Equivalent numpy function.</span>
+<span class="sd">    - [scipy.sparse.coo_matrix.sum][] : Equivalent Scipy function.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -5781,8 +5792,10 @@ scipy.sparse.coo_matrix.sum : Equivalent Scipy function.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>:obj:<code>numpy.max</code> : Equivalent numpy function.
-scipy.sparse.coo_matrix.max : Equivalent Scipy function.</p>
+  <ul>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.max.html#numpy.max">numpy.max</a> : Equivalent numpy function.</li>
+<li><a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.max.html#scipy.sparse.coo_matrix.max">scipy.sparse.coo_matrix.max</a> : Equivalent Scipy function.</li>
+</ul>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
@@ -5829,8 +5842,8 @@ scipy.sparse.coo_matrix.max : Equivalent Scipy function.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    :obj:`numpy.max` : Equivalent numpy function.</span>
-<span class="sd">    scipy.sparse.coo_matrix.max : Equivalent Scipy function.</span>
+<span class="sd">    - [numpy.max][] : Equivalent numpy function.</span>
+<span class="sd">    - [scipy.sparse.coo_matrix.max][] : Equivalent Scipy function.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -5921,7 +5934,7 @@ scipy.sparse.coo_matrix.max : Equivalent Scipy function.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>:obj:<code>numpy.any</code> : Equivalent numpy function.</p>
+  <p><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.any.html#numpy.any">numpy.any</a> : Equivalent numpy function.</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
@@ -5963,7 +5976,7 @@ scipy.sparse.coo_matrix.max : Equivalent Scipy function.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    :obj:`numpy.any` : Equivalent numpy function.</span>
+<span class="sd">    [numpy.any][] : Equivalent numpy function.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -6054,7 +6067,7 @@ scipy.sparse.coo_matrix.max : Equivalent Scipy function.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>:obj:<code>numpy.all</code> : Equivalent numpy function.</p>
+  <p><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.all.html#numpy.all">numpy.all</a> : Equivalent numpy function.</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
@@ -6096,7 +6109,7 @@ scipy.sparse.coo_matrix.max : Equivalent Scipy function.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    :obj:`numpy.all` : Equivalent numpy function.</span>
+<span class="sd">    [numpy.all][] : Equivalent numpy function.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -6201,8 +6214,10 @@ scipy.sparse.coo_matrix.max : Equivalent Scipy function.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>:obj:<code>numpy.min</code> : Equivalent numpy function.
-scipy.sparse.coo_matrix.min : Equivalent Scipy function.</p>
+  <ul>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.min.html#numpy.min">numpy.min</a> : Equivalent numpy function.</li>
+<li><a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.min.html#scipy.sparse.coo_matrix.min">scipy.sparse.coo_matrix.min</a> : Equivalent Scipy function.</li>
+</ul>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
@@ -6249,8 +6264,8 @@ scipy.sparse.coo_matrix.min : Equivalent Scipy function.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    :obj:`numpy.min` : Equivalent numpy function.</span>
-<span class="sd">    scipy.sparse.coo_matrix.min : Equivalent Scipy function.</span>
+<span class="sd">    - [numpy.min][] : Equivalent numpy function.</span>
+<span class="sd">    - [scipy.sparse.coo_matrix.min][] : Equivalent Scipy function.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -6355,7 +6370,7 @@ scipy.sparse.coo_matrix.min : Equivalent Scipy function.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>:obj:<code>numpy.prod</code> : Equivalent numpy function.</p>
+  <p><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.prod.html#numpy.prod">numpy.prod</a> : Equivalent numpy function.</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
@@ -6401,7 +6416,7 @@ scipy.sparse.coo_matrix.min : Equivalent Scipy function.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    :obj:`numpy.prod` : Equivalent numpy function.</span>
+<span class="sd">    [numpy.prod][] : Equivalent numpy function.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -6426,11 +6441,13 @@ scipy.sparse.coo_matrix.min : Equivalent Scipy function.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>:obj:<code>numpy.round</code> :
-    NumPy equivalent ufunc.
-:obj:<code>COO.elemwise</code> :
+  <ul>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.round.html#numpy.round">numpy.round</a> :
+    NumPy equivalent ufunc.</li>
+<li><a class="autorefs autorefs-internal" href="../elemwise/#sparse.elemwise">elemwise</a> :
     Apply an arbitrary element-wise function to one or two
-    arguments.</p>
+    arguments.</li>
+</ul>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
@@ -6454,9 +6471,9 @@ scipy.sparse.coo_matrix.min : Equivalent Scipy function.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    :obj:`numpy.round` :</span>
+<span class="sd">    - [numpy.round][] :</span>
 <span class="sd">        NumPy equivalent ufunc.</span>
-<span class="sd">    :obj:`COO.elemwise` :</span>
+<span class="sd">    - [elemwise][sparse.elemwise] :</span>
 <span class="sd">        Apply an arbitrary element-wise function to one or two</span>
 <span class="sd">        arguments.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -6487,8 +6504,10 @@ or max must be given.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>sparse.clip : For full documentation and more details.
-numpy.clip : Equivalent NumPy function.</p>
+  <ul>
+<li><a class="autorefs autorefs-internal" href="../clip/#sparse.clip">sparse.clip</a> : For full documentation and more details.</li>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.clip.html#numpy.clip">numpy.clip</a> : Equivalent NumPy function.</li>
+</ul>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
@@ -6517,8 +6536,8 @@ numpy.clip : Equivalent NumPy function.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    sparse.clip : For full documentation and more details.</span>
-<span class="sd">    numpy.clip : Equivalent NumPy function.</span>
+<span class="sd">    - [sparse.clip][] : For full documentation and more details.</span>
+<span class="sd">    - [numpy.clip][] : Equivalent NumPy function.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">min</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">max</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;One of max or min must be given.&quot;</span><span class="p">)</span>
@@ -6547,13 +6566,15 @@ numpy.clip : Equivalent NumPy function.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>scipy.sparse.coo_matrix.astype :
-    SciPy sparse equivalent function
-numpy.ndarray.astype :
-    NumPy equivalent ufunc.
-:obj:<code>COO.elemwise</code> :
+  <ul>
+<li><a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.astype.html#scipy.sparse.coo_matrix.astype">scipy.sparse.coo_matrix.astype</a> :
+    SciPy sparse equivalent function</li>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.astype.html#numpy.ndarray.astype">numpy.ndarray.astype</a> :
+    NumPy equivalent ufunc.</li>
+<li><a class="autorefs autorefs-internal" href="../elemwise/#sparse.elemwise">elemwise</a> :
     Apply an arbitrary element-wise function to one or two
-    arguments.</p>
+    arguments.</li>
+</ul>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
@@ -6580,11 +6601,11 @@ numpy.ndarray.astype :
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    scipy.sparse.coo_matrix.astype :</span>
+<span class="sd">    - [scipy.sparse.coo_matrix.astype][] :</span>
 <span class="sd">        SciPy sparse equivalent function</span>
-<span class="sd">    numpy.ndarray.astype :</span>
+<span class="sd">    - [numpy.ndarray.astype][] :</span>
 <span class="sd">        NumPy equivalent ufunc.</span>
-<span class="sd">    :obj:`COO.elemwise` :</span>
+<span class="sd">    - [elemwise][sparse.elemwise] :</span>
 <span class="sd">        Apply an arbitrary element-wise function to one or two</span>
 <span class="sd">        arguments.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -6694,22 +6715,22 @@ numpy.ndarray.astype :
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>numpy.ndarray.mean : Equivalent numpy method.
-scipy.sparse.coo_matrix.mean : Equivalent Scipy method.</p>
+  <ul>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.mean.html#numpy.ndarray.mean">numpy.ndarray.mean</a> : Equivalent numpy method.</li>
+<li><a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.mean.html#scipy.sparse.coo_matrix.mean">scipy.sparse.coo_matrix.mean</a> : Equivalent Scipy method.</li>
+</ul>
 </details>
 
 <details class="note" open>
   <summary>Notes</summary>
   <ul>
-<li>This function internally calls :obj:<code>COO.sum_duplicates</code> to bring the
-  array into canonical form.</li>
-<li>The :code:<code>out</code> parameter is provided just for compatibility with
+<li>The <code>out</code> parameter is provided just for compatibility with
   Numpy and isn't actually supported.</li>
 </ul>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <p>You can use :obj:<code>COO.mean</code> to compute the mean of an array across any
+    <p>You can use <a class="autorefs autorefs-internal" href="../COO/#sparse.COO.mean">COO.mean</a> to compute the mean of an array across any
 dimension.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sparse</span> <span class="kn">import</span> <span class="n">COO</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;i8&quot;</span><span class="p">)</span>
@@ -6718,7 +6739,7 @@ dimension.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
 <span class="go">array([0.5, 1.5, 0., 0.])</span>
 </code></pre></div>
-    <p>You can also use the :code:<code>keepdims</code> argument to keep the dimensions
+    <p>You can also use the <code>keepdims</code> argument to keep the dimensions
 after the mean.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">s3</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s3</span><span class="o">.</span><span class="n">shape</span>
@@ -6817,9 +6838,7 @@ mean along all axes.</p>
 <span class="normal">712</span>
 <span class="normal">713</span>
 <span class="normal">714</span>
-<span class="normal">715</span>
-<span class="normal">716</span>
-<span class="normal">717</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal">715</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Compute the mean along the given axes. Uses all axes by default.</span>
 
@@ -6839,19 +6858,17 @@ mean along all axes.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    numpy.ndarray.mean : Equivalent numpy method.</span>
-<span class="sd">    scipy.sparse.coo_matrix.mean : Equivalent Scipy method.</span>
+<span class="sd">    - [numpy.ndarray.mean][] : Equivalent numpy method.</span>
+<span class="sd">    - [scipy.sparse.coo_matrix.mean][] : Equivalent Scipy method.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    * This function internally calls :obj:`COO.sum_duplicates` to bring the</span>
-<span class="sd">      array into canonical form.</span>
-<span class="sd">    * The :code:`out` parameter is provided just for compatibility with</span>
+<span class="sd">    * The `out` parameter is provided just for compatibility with</span>
 <span class="sd">      Numpy and isn&#39;t actually supported.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    You can use :obj:`COO.mean` to compute the mean of an array across any</span>
+<span class="sd">    You can use [COO.mean][sparse.COO.mean] to compute the mean of an array across any</span>
 <span class="sd">    dimension.</span>
 
 <span class="sd">    &gt;&gt;&gt; from sparse import COO</span>
@@ -6861,7 +6878,7 @@ mean along all axes.</p>
 <span class="sd">    &gt;&gt;&gt; s2.todense()  # doctest: +SKIP</span>
 <span class="sd">    array([0.5, 1.5, 0., 0.])</span>
 
-<span class="sd">    You can also use the :code:`keepdims` argument to keep the dimensions</span>
+<span class="sd">    You can also use the `keepdims` argument to keep the dimensions</span>
 <span class="sd">    after the mean.</span>
 
 <span class="sd">    &gt;&gt;&gt; s3 = s.mean(axis=0, keepdims=True)</span>
@@ -7032,19 +7049,11 @@ mean along all axes.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>numpy.ndarray.var : Equivalent numpy method.</p>
-</details>
-
-<details class="note" open>
-  <summary>Notes</summary>
-  <ul>
-<li>This function internally calls :obj:<code>COO.sum_duplicates</code> to bring the
-  array into canonical form.</li>
-</ul>
+  <p><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.var.html#numpy.ndarray.var">numpy.ndarray.var</a> : Equivalent numpy method.</p>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <p>You can use :obj:<code>COO.var</code> to compute the variance of an array across any
+    <p>You can use <a class="autorefs autorefs-internal" href="../COO/#sparse.COO.var">COO.var</a> to compute the variance of an array across any
 dimension.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sparse</span> <span class="kn">import</span> <span class="n">COO</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;i8&quot;</span><span class="p">)</span>
@@ -7053,7 +7062,7 @@ dimension.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
 <span class="go">array([0.6875, 0.1875])</span>
 </code></pre></div>
-    <p>You can also use the :code:<code>keepdims</code> argument to keep the dimensions
+    <p>You can also use the <code>keepdims</code> argument to keep the dimensions
 after the variance.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">s3</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s3</span><span class="o">.</span><span class="n">shape</span>
@@ -7072,7 +7081,9 @@ variance along all axes.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">719</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">717</span>
+<span class="normal">718</span>
+<span class="normal">719</span>
 <span class="normal">720</span>
 <span class="normal">721</span>
 <span class="normal">722</span>
@@ -7159,14 +7170,7 @@ variance along all axes.</p>
 <span class="normal">803</span>
 <span class="normal">804</span>
 <span class="normal">805</span>
-<span class="normal">806</span>
-<span class="normal">807</span>
-<span class="normal">808</span>
-<span class="normal">809</span>
-<span class="normal">810</span>
-<span class="normal">811</span>
-<span class="normal">812</span>
-<span class="normal">813</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">var</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="normal">806</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">var</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Compute the variance along the given axes. Uses all axes by default.</span>
 
@@ -7190,16 +7194,11 @@ variance along all axes.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    numpy.ndarray.var : Equivalent numpy method.</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    * This function internally calls :obj:`COO.sum_duplicates` to bring the</span>
-<span class="sd">      array into canonical form.</span>
+<span class="sd">    [numpy.ndarray.var][] : Equivalent numpy method.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    You can use :obj:`COO.var` to compute the variance of an array across any</span>
+<span class="sd">    You can use [COO.var][sparse.COO.var] to compute the variance of an array across any</span>
 <span class="sd">    dimension.</span>
 
 <span class="sd">    &gt;&gt;&gt; from sparse import COO</span>
@@ -7209,7 +7208,7 @@ variance along all axes.</p>
 <span class="sd">    &gt;&gt;&gt; s2.todense()  # doctest: +SKIP</span>
 <span class="sd">    array([0.6875, 0.1875])</span>
 
-<span class="sd">    You can also use the :code:`keepdims` argument to keep the dimensions</span>
+<span class="sd">    You can also use the `keepdims` argument to keep the dimensions</span>
 <span class="sd">    after the variance.</span>
 
 <span class="sd">    &gt;&gt;&gt; s3 = s.var(axis=0, keepdims=True)</span>
@@ -7392,19 +7391,11 @@ all axes by default.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>numpy.ndarray.std : Equivalent numpy method.</p>
-</details>
-
-<details class="note" open>
-  <summary>Notes</summary>
-  <ul>
-<li>This function internally calls :obj:<code>COO.sum_duplicates</code> to bring the
-  array into canonical form.</li>
-</ul>
+  <p><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.std.html#numpy.ndarray.std">numpy.ndarray.std</a> : Equivalent numpy method.</p>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <p>You can use :obj:<code>COO.std</code> to compute the standard deviation of an array
+    <p>You can use <a class="autorefs autorefs-internal" href="../COO/#sparse.COO.std">COO.std</a> to compute the standard deviation of an array
 across any dimension.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sparse</span> <span class="kn">import</span> <span class="n">COO</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;i8&quot;</span><span class="p">)</span>
@@ -7413,7 +7404,7 @@ across any dimension.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
 <span class="go">array([0.8291562, 0.4330127])</span>
 </code></pre></div>
-    <p>You can also use the :code:<code>keepdims</code> argument to keep the dimensions
+    <p>You can also use the <code>keepdims</code> argument to keep the dimensions
 after the standard deviation.</p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">s3</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s3</span><span class="o">.</span><span class="n">shape</span>
@@ -7432,7 +7423,14 @@ standard deviation along all axes.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">815</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">808</span>
+<span class="normal">809</span>
+<span class="normal">810</span>
+<span class="normal">811</span>
+<span class="normal">812</span>
+<span class="normal">813</span>
+<span class="normal">814</span>
+<span class="normal">815</span>
 <span class="normal">816</span>
 <span class="normal">817</span>
 <span class="normal">818</span>
@@ -7485,19 +7483,7 @@ standard deviation along all axes.</p>
 <span class="normal">865</span>
 <span class="normal">866</span>
 <span class="normal">867</span>
-<span class="normal">868</span>
-<span class="normal">869</span>
-<span class="normal">870</span>
-<span class="normal">871</span>
-<span class="normal">872</span>
-<span class="normal">873</span>
-<span class="normal">874</span>
-<span class="normal">875</span>
-<span class="normal">876</span>
-<span class="normal">877</span>
-<span class="normal">878</span>
-<span class="normal">879</span>
-<span class="normal">880</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">std</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="normal">868</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">std</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Compute the standard deviation along the given axes. Uses all axes by default.</span>
 
@@ -7522,16 +7508,11 @@ standard deviation along all axes.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    numpy.ndarray.std : Equivalent numpy method.</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    * This function internally calls :obj:`COO.sum_duplicates` to bring the</span>
-<span class="sd">      array into canonical form.</span>
+<span class="sd">    [numpy.ndarray.std][] : Equivalent numpy method.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    You can use :obj:`COO.std` to compute the standard deviation of an array</span>
+<span class="sd">    You can use [COO.std][sparse.COO.std] to compute the standard deviation of an array</span>
 <span class="sd">    across any dimension.</span>
 
 <span class="sd">    &gt;&gt;&gt; from sparse import COO</span>
@@ -7541,7 +7522,7 @@ standard deviation along all axes.</p>
 <span class="sd">    &gt;&gt;&gt; s2.todense()  # doctest: +SKIP</span>
 <span class="sd">    array([0.8291562, 0.4330127])</span>
 
-<span class="sd">    You can also use the :code:`keepdims` argument to keep the dimensions</span>
+<span class="sd">    You can also use the `keepdims` argument to keep the dimensions</span>
 <span class="sd">    after the standard deviation.</span>
 
 <span class="sd">    &gt;&gt;&gt; s3 = s.std(axis=0, keepdims=True)</span>
@@ -7621,12 +7602,26 @@ sign of its imaginary part.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>numpy.ndarray.conj : NumPy equivalent method.
-numpy.conj : NumPy equivalent function.</p>
+  <ul>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.conj.html#numpy.ndarray.conj">numpy.ndarray.conj</a> : NumPy equivalent method.</li>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.conj.html#numpy.conj">numpy.conj</a> : NumPy equivalent function.</li>
+</ul>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">936</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">924</span>
+<span class="normal">925</span>
+<span class="normal">926</span>
+<span class="normal">927</span>
+<span class="normal">928</span>
+<span class="normal">929</span>
+<span class="normal">930</span>
+<span class="normal">931</span>
+<span class="normal">932</span>
+<span class="normal">933</span>
+<span class="normal">934</span>
+<span class="normal">935</span>
+<span class="normal">936</span>
 <span class="normal">937</span>
 <span class="normal">938</span>
 <span class="normal">939</span>
@@ -7640,19 +7635,7 @@ numpy.conj : NumPy equivalent function.</p>
 <span class="normal">947</span>
 <span class="normal">948</span>
 <span class="normal">949</span>
-<span class="normal">950</span>
-<span class="normal">951</span>
-<span class="normal">952</span>
-<span class="normal">953</span>
-<span class="normal">954</span>
-<span class="normal">955</span>
-<span class="normal">956</span>
-<span class="normal">957</span>
-<span class="normal">958</span>
-<span class="normal">959</span>
-<span class="normal">960</span>
-<span class="normal">961</span>
-<span class="normal">962</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">conj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">950</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">conj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the complex conjugate, element-wise.</span>
 
 <span class="sd">    The complex conjugate of a complex number is obtained by changing the</span>
@@ -7675,8 +7658,8 @@ numpy.conj : NumPy equivalent function.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    numpy.ndarray.conj : NumPy equivalent method.</span>
-<span class="sd">    numpy.conj : NumPy equivalent function.</span>
+<span class="sd">    - [numpy.ndarray.conj][] : NumPy equivalent method.</span>
+<span class="sd">    - [numpy.conj][] : NumPy equivalent function.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -7702,9 +7685,9 @@ numpy.conj : NumPy equivalent function.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 999</span>
-<span class="normal">1000</span>
-<span class="normal">1001</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">987</span>
+<span class="normal">988</span>
+<span class="normal">989</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
 <span class="k">def</span> <span class="nf">isinf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
@@ -7730,9 +7713,9 @@ numpy.conj : NumPy equivalent function.</p>
 
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_sparse_array.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1003</span>
-<span class="normal">1004</span>
-<span class="normal">1005</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">991</span>
+<span class="normal">992</span>
+<span class="normal">993</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
 <span class="k">def</span> <span class="nf">isnan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
@@ -7756,7 +7739,7 @@ numpy.conj : NumPy equivalent function.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Create a :obj:<code>DOK</code> array from a :obj:<code>scipy.sparse.spmatrix</code>.</p>
+      <p>Create a <a class="autorefs autorefs-internal" href="#sparse.DOK">DOK</a> array from a <a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.spmatrix.html#scipy.sparse.spmatrix">scipy.sparse.spmatrix</a>.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -7817,7 +7800,7 @@ numpy.conj : NumPy equivalent function.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The equivalent :obj:<code>DOK</code> array.</p>
+                <p>The equivalent <a class="autorefs autorefs-internal" href="#sparse.DOK">DOK</a> array.</p>
               </div>
             </td>
           </tr>
@@ -7863,7 +7846,7 @@ numpy.conj : NumPy equivalent function.</p>
 <span class="normal">159</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">from_scipy_sparse</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Create a :obj:`DOK` array from a :obj:`scipy.sparse.spmatrix`.</span>
+<span class="sd">    Create a [DOK][sparse.DOK] array from a [scipy.sparse.spmatrix][].</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -7875,7 +7858,7 @@ numpy.conj : NumPy equivalent function.</p>
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    DOK</span>
-<span class="sd">        The equivalent :obj:`DOK` array.</span>
+<span class="sd">        The equivalent [DOK][sparse.DOK] array.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -7908,7 +7891,7 @@ numpy.conj : NumPy equivalent function.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Get a :obj:<code>DOK</code> array from a :obj:<code>COO</code> array.</p>
+      <p>Get a <a class="autorefs autorefs-internal" href="#sparse.DOK">DOK</a> array from a <a class="autorefs autorefs-internal" href="../COO/#sparse.COO">COO</a> array.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -7955,7 +7938,7 @@ numpy.conj : NumPy equivalent function.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The equivalent :obj:<code>DOK</code> array.</p>
+                <p>The equivalent <a class="autorefs autorefs-internal" href="#sparse.DOK">DOK</a> array.</p>
               </div>
             </td>
           </tr>
@@ -8004,7 +7987,7 @@ numpy.conj : NumPy equivalent function.</p>
 <span class="normal">189</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">from_coo</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Get a :obj:`DOK` array from a :obj:`COO` array.</span>
+<span class="sd">    Get a [DOK][sparse.DOK] array from a [COO][sparse.COO] array.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -8014,7 +7997,7 @@ numpy.conj : NumPy equivalent function.</p>
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    DOK</span>
-<span class="sd">        The equivalent :obj:`DOK` array.</span>
+<span class="sd">        The equivalent [DOK][sparse.DOK] array.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -8047,7 +8030,7 @@ numpy.conj : NumPy equivalent function.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Convert this :obj:<code>DOK</code> array to a :obj:<code>COO</code> array.</p>
+      <p>Convert this <a class="autorefs autorefs-internal" href="#sparse.DOK">DOK</a> array to a <a class="autorefs autorefs-internal" href="../COO/#sparse.COO">COO</a> array.</p>
 
 
     <p><span class="doc-section-title">Returns:</span></p>
@@ -8065,7 +8048,7 @@ numpy.conj : NumPy equivalent function.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The equivalent :obj:<code>COO</code> array.</p>
+                <p>The equivalent <a class="autorefs autorefs-internal" href="../COO/#sparse.COO">COO</a> array.</p>
               </div>
             </td>
           </tr>
@@ -8108,12 +8091,12 @@ numpy.conj : NumPy equivalent function.</p>
 <span class="normal">211</span>
 <span class="normal">212</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">to_coo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Convert this :obj:`DOK` array to a :obj:`COO` array.</span>
+<span class="sd">    Convert this [DOK][sparse.DOK] array to a [COO][sparse.COO] array.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    COO</span>
-<span class="sd">        The equivalent :obj:`COO` array.</span>
+<span class="sd">        The equivalent [COO][sparse.COO] array.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -8149,7 +8132,7 @@ numpy.conj : NumPy equivalent function.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Get a :obj:<code>DOK</code> array from a Numpy array.</p>
+      <p>Get a <a class="autorefs autorefs-internal" href="#sparse.DOK">DOK</a> array from a Numpy array.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -8196,7 +8179,7 @@ numpy.conj : NumPy equivalent function.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The equivalent :obj:<code>DOK</code> array.</p>
+                <p>The equivalent <a class="autorefs autorefs-internal" href="#sparse.DOK">DOK</a> array.</p>
               </div>
             </td>
           </tr>
@@ -8245,7 +8228,7 @@ numpy.conj : NumPy equivalent function.</p>
 <span class="normal">244</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">from_numpy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Get a :obj:`DOK` array from a Numpy array.</span>
+<span class="sd">    Get a [DOK][sparse.DOK] array from a Numpy array.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -8255,7 +8238,7 @@ numpy.conj : NumPy equivalent function.</p>
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    DOK</span>
-<span class="sd">        The equivalent :obj:`DOK` array.</span>
+<span class="sd">        The equivalent [DOK][sparse.DOK] array.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -8290,7 +8273,7 @@ numpy.conj : NumPy equivalent function.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Convert this :obj:<code>DOK</code> array into a Numpy array.</p>
+      <p>Convert this <a class="autorefs autorefs-internal" href="#sparse.DOK">DOK</a> array into a Numpy array.</p>
 
 
     <p><span class="doc-section-title">Returns:</span></p>
@@ -8318,8 +8301,10 @@ numpy.conj : NumPy equivalent function.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>COO.todense : Equivalent :obj:<code>COO</code> array method.
-scipy.sparse.dok_matrix.todense : Equivalent Scipy method.</p>
+  <ul>
+<li><a class="autorefs autorefs-internal" href="../COO/#sparse.COO.todense">COO.todense</a> : Equivalent <code>COO</code> array method.</li>
+<li><a class="autorefs autorefs-external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.todense.html#scipy.sparse.coo_matrix.todense">scipy.sparse.coo_matrix.todense</a> : Equivalent Scipy method.</li>
+</ul>
 </details>
 
 <p><span class="doc-section-title">Examples:</span></p>
@@ -8367,7 +8352,7 @@ scipy.sparse.dok_matrix.todense : Equivalent Scipy method.</p>
 <span class="normal">469</span>
 <span class="normal">470</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">todense</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Convert this :obj:`DOK` array into a Numpy array.</span>
+<span class="sd">    Convert this [DOK][sparse.DOK] array into a Numpy array.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -8376,8 +8361,8 @@ scipy.sparse.dok_matrix.todense : Equivalent Scipy method.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    COO.todense : Equivalent :obj:`COO` array method.</span>
-<span class="sd">    scipy.sparse.dok_matrix.todense : Equivalent Scipy method.</span>
+<span class="sd">    - [COO.todense][sparse.COO.todense] : Equivalent `COO` array method.</span>
+<span class="sd">    - [scipy.sparse.coo_matrix.todense][] : Equivalent Scipy method.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -8586,7 +8571,7 @@ scipy.sparse.dok_matrix.todense : Equivalent Scipy method.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Returns a new :obj:<code>DOK</code> array that is a reshaped version of this array.</p>
+      <p>Returns a new <a class="autorefs autorefs-internal" href="#sparse.DOK">DOK</a> array that is a reshaped version of this array.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -8643,12 +8628,12 @@ scipy.sparse.dok_matrix.todense : Equivalent Scipy method.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>numpy.ndarray.reshape : The equivalent Numpy function.</p>
+  <p><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.reshape.html#numpy.ndarray.reshape">numpy.ndarray.reshape</a> : The equivalent Numpy function.</p>
 </details>
 
 <details class="note" open>
   <summary>Notes</summary>
-  <p>The :code:<code>order</code> parameter is provided just for compatibility with
+  <p>The <code>order</code> parameter is provided just for compatibility with
 Numpy and isn't actually supported.</p>
 </details>
 
@@ -8704,7 +8689,7 @@ Numpy and isn't actually supported.</p>
 <span class="normal">548</span>
 <span class="normal">549</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reshape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns a new :obj:`DOK` array that is a reshaped version of this array.</span>
+<span class="sd">    Returns a new [DOK][sparse.DOK] array that is a reshaped version of this array.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -8718,11 +8703,11 @@ Numpy and isn't actually supported.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    numpy.ndarray.reshape : The equivalent Numpy function.</span>
+<span class="sd">    [numpy.ndarray.reshape][] : The equivalent Numpy function.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    The :code:`order` parameter is provided just for compatibility with</span>
+<span class="sd">    The `order` parameter is provided just for compatibility with</span>
 <span class="sd">    Numpy and isn&#39;t actually supported.</span>
 
 <span class="sd">    Examples</span>

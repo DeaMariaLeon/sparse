@@ -2660,7 +2660,7 @@
 <a id="sparse.dot"></a>
     <div class="doc doc-contents first">
 
-      <p>Perform the equivalent of :obj:<code>numpy.dot</code> on two arrays.</p>
+      <p>Perform the equivalent of <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html#numpy.dot">numpy.dot</a> on two arrays.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -2681,7 +2681,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The arrays to perform the :code:<code>dot</code> operation on.</p>
+                <p>The arrays to perform the <code>dot</code> operation on.</p>
               </div>
             </td>
             <td>
@@ -2695,7 +2695,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The arrays to perform the :code:<code>dot</code> operation on.</p>
+                <p>The arrays to perform the <code>dot</code> operation on.</p>
               </div>
             </td>
             <td>
@@ -2754,8 +2754,10 @@
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>numpy.dot : NumPy equivalent function.
-COO.dot : Equivalent function for COO objects.</p>
+  <ul>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html#numpy.dot">numpy.dot</a> : NumPy equivalent function.</li>
+<li><a class="autorefs autorefs-internal" href="../COO/#sparse.COO.dot">COO.dot</a> : Equivalent function for COO objects.</li>
+</ul>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_common.py</code></summary>
@@ -2801,12 +2803,12 @@ COO.dot : Equivalent function for COO objects.</p>
 <span class="normal">321</span>
 <span class="normal">322</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Perform the equivalent of :obj:`numpy.dot` on two arrays.</span>
+<span class="sd">    Perform the equivalent of [numpy.dot][] on two arrays.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    a, b : Union[SparseArray, np.ndarray, scipy.sparse.spmatrix]</span>
-<span class="sd">        The arrays to perform the :code:`dot` operation on.</span>
+<span class="sd">        The arrays to perform the `dot` operation on.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -2820,8 +2822,8 @@ COO.dot : Equivalent function for COO objects.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    numpy.dot : NumPy equivalent function.</span>
-<span class="sd">    COO.dot : Equivalent function for COO objects.</span>
+<span class="sd">    - [numpy.dot][] : NumPy equivalent function.</span>
+<span class="sd">    - [COO.dot][sparse.COO.dot] : Equivalent function for COO objects.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">check_zero_fill_value</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;ndim&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s2">&quot;ndim&quot;</span><span class="p">):</span>

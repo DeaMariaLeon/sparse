@@ -2770,15 +2770,15 @@ don't have broadcastable shapes.</p>
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>:obj:<code>numpy.ufunc</code> :
-    A similar Numpy construct. Note that any :code:<code>ufunc</code> can be used
-    as the :code:<code>func</code> input to this function.</p>
+  <p><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.html#numpy.ufunc">numpy.ufunc</a> :
+    A similar Numpy construct. Note that any <code>ufunc</code> can be used
+    as the <code>func</code> input to this function.</p>
 </details>
 
 <details class="note" open>
   <summary>Notes</summary>
   <p>Previously, operations with Numpy arrays were sometimes supported. Now,
-it is necessary to convert Numpy arrays to :obj:<code>COO</code> objects.</p>
+it is necessary to convert Numpy arrays to <a class="autorefs autorefs-internal" href="../COO/#sparse.COO">COO</a> objects.</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_umath.py</code></summary>
@@ -2846,14 +2846,14 @@ it is necessary to convert Numpy arrays to :obj:<code>COO</code> objects.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    :obj:`numpy.ufunc` :</span>
-<span class="sd">        A similar Numpy construct. Note that any :code:`ufunc` can be used</span>
-<span class="sd">        as the :code:`func` input to this function.</span>
+<span class="sd">    [numpy.ufunc][] :</span>
+<span class="sd">        A similar Numpy construct. Note that any `ufunc` can be used</span>
+<span class="sd">        as the `func` input to this function.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    Previously, operations with Numpy arrays were sometimes supported. Now,</span>
-<span class="sd">    it is necessary to convert Numpy arrays to :obj:`COO` objects.</span>
+<span class="sd">    it is necessary to convert Numpy arrays to [COO][sparse.COO] objects.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">return</span> <span class="n">_Elemwise</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>

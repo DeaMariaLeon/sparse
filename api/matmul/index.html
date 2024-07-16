@@ -2660,7 +2660,7 @@
 <a id="sparse.matmul"></a>
     <div class="doc doc-contents first">
 
-      <p>Perform the equivalent of :obj:<code>numpy.matmul</code> on two arrays.</p>
+      <p>Perform the equivalent of <a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.matmul.html#numpy.matmul">numpy.matmul</a> on two arrays.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -2681,7 +2681,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The arrays to perform the :code:<code>matmul</code> operation on.</p>
+                <p>The arrays to perform the <code>matmul</code> operation on.</p>
               </div>
             </td>
             <td>
@@ -2695,7 +2695,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The arrays to perform the :code:<code>matmul</code> operation on.</p>
+                <p>The arrays to perform the <code>matmul</code> operation on.</p>
               </div>
             </td>
             <td>
@@ -2754,8 +2754,10 @@
 
 <details class="see-also" open>
   <summary>See Also</summary>
-  <p>numpy.matmul : NumPy equivalent function.
-COO.<strong>matmul</strong> : Equivalent function for COO objects.</p>
+  <ul>
+<li><a class="autorefs autorefs-external" href="https://numpy.org/doc/stable/reference/generated/numpy.matmul.html#numpy.matmul">numpy.matmul</a> : NumPy equivalent function.</li>
+<li><code>COO.__matmul__</code>: Equivalent function for COO objects.</li>
+</ul>
 </details>
             <details class="quote">
               <summary>Source code in <code>sparse/numba_backend/_common.py</code></summary>
@@ -2835,12 +2837,12 @@ COO.<strong>matmul</strong> : Equivalent function for COO objects.</p>
 <span class="normal">277</span>
 <span class="normal">278</span>
 <span class="normal">279</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Perform the equivalent of :obj:`numpy.matmul` on two arrays.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Perform the equivalent of [numpy.matmul][] on two arrays.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    a, b : Union[SparseArray, np.ndarray, scipy.sparse.spmatrix]</span>
-<span class="sd">        The arrays to perform the :code:`matmul` operation on.</span>
+<span class="sd">        The arrays to perform the `matmul` operation on.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -2854,8 +2856,8 @@ COO.<strong>matmul</strong> : Equivalent function for COO objects.</p>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    numpy.matmul : NumPy equivalent function.</span>
-<span class="sd">    COO.__matmul__ : Equivalent function for COO objects.</span>
+<span class="sd">    - [numpy.matmul][] : NumPy equivalent function.</span>
+<span class="sd">    - `COO.__matmul__`: Equivalent function for COO objects.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">check_zero_fill_value</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;ndim&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s2">&quot;ndim&quot;</span><span class="p">):</span>

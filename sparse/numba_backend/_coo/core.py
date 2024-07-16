@@ -43,7 +43,7 @@ class COO(SparseArray, NDArrayOperatorsMixin):  # lgtm [py/missing-equals]
     has_duplicates : bool, optional
         A value indicating whether the supplied value for [coords][sparse.COO.coords] has
         duplicates. Note that setting this to `False` when `coords` does have
-        duplicates may result in undefined behaviour. See `COO.sum_duplicates`.
+        duplicates may result in undefined behaviour.
     sorted : bool, optional
         A value indicating whether the values in `coords` are sorted. Note
         that setting this to `True` when [coords][sparse.COO.coords] isn't sorted may
@@ -53,7 +53,7 @@ class COO(SparseArray, NDArrayOperatorsMixin):  # lgtm [py/missing-equals]
         `data`.
     cache : bool, optional
         Whether to enable cacheing for various operations. See
-        `COO.enable_caching`.
+        [COO.enable_caching][sparse.COO.enable_caching].
     fill_value: scalar, optional
         The fill value for this array.
 
@@ -952,7 +952,7 @@ class COO(SparseArray, NDArrayOperatorsMixin):  # lgtm [py/missing-equals]
 
         See Also
         --------
-        :obj:`numpy.flatnonzero` : Equivalent Numpy function.
+        [numpy.flatnonzero][] : Equivalent Numpy function.
 
         Examples
         --------
@@ -969,7 +969,7 @@ class COO(SparseArray, NDArrayOperatorsMixin):  # lgtm [py/missing-equals]
 
     def flatten(self, order="C"):
         """
-        Returns a new :obj:`COO` array that is a flattened version of this array.
+        Returns a new [COO][sparse.COO] array that is a flattened version of this array.
 
         Returns
         -------
@@ -995,7 +995,7 @@ class COO(SparseArray, NDArrayOperatorsMixin):  # lgtm [py/missing-equals]
 
     def reshape(self, shape, order="C"):
         """
-        Returns a new :obj:`COO` array that is a reshaped version of this array.
+        Returns a new [COO][sparse.COO] array that is a reshaped version of this array.
 
         Parameters
         ----------
@@ -1407,7 +1407,7 @@ class COO(SparseArray, NDArrayOperatorsMixin):  # lgtm [py/missing-equals]
 
     def maybe_densify(self, max_size=1000, min_density=0.25):
         """
-        Converts this :obj:`COO` array to a :obj:`numpy.ndarray` if not too
+        Converts this [COO][sparse.COO] array to a [numpy.ndarray][] if not too
         costly.
 
         Parameters
@@ -1556,7 +1556,7 @@ class COO(SparseArray, NDArrayOperatorsMixin):  # lgtm [py/missing-equals]
 
 def as_coo(x, shape=None, fill_value=None, idx_dtype=None):
     """
-    Converts any given format to :obj:`COO`. See the "See Also" section for details.
+    Converts any given format to [COO][sparse.COO]. See the "See Also" section for details.
 
     Parameters
     ----------
@@ -1568,18 +1568,18 @@ def as_coo(x, shape=None, fill_value=None, idx_dtype=None):
     Returns
     -------
     out : COO
-        The converted :obj:`COO` array.
+        The converted [COO][sparse.COO] array.
 
     See Also
     --------
-    SparseArray.asformat :
+    - [SparseArray.asformat][sparse.SparseArray.asformat] :
         A utility function to convert between formats in this library.
-    COO.from_numpy :
-        Convert a Numpy array to :obj:`COO`.
-    COO.from_scipy_sparse :
-        Convert a SciPy sparse matrix to :obj:`COO`.
-    COO.from_iter :
-        Convert an iterable to :obj:`COO`.
+    - [COO.from_numpy][sparse.COO.from_numpy] :
+        Convert a Numpy array to [COO][sparse.COO].
+    - [COO.from_scipy_sparse][sparse.COO.from_scipy_sparse] :
+        Convert a SciPy sparse matrix to [COO][sparse.COO].
+    - [COO.from_iter][sparse.COO.from_iter] :
+        Convert an iterable to [COO][sparse.COO].
     """
     from .._common import _is_scipy_sparse_obj
 

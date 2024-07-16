@@ -63,7 +63,7 @@ class SparseArray:
     def nnz(self):
         """
         The number of nonzero elements in this array. Note that any duplicates in
-        :code:`coords` are counted multiple times. To avoid this, call :obj:`COO.sum_duplicates`.
+        `coords` are counted multiple times.
 
         Returns
         -------
@@ -72,9 +72,9 @@ class SparseArray:
 
         See Also
         --------
-        DOK.nnz : Equivalent :obj:`DOK` array property.
-        numpy.count_nonzero : A similar Numpy function.
-        scipy.sparse.coo_matrix.nnz : The Scipy equivalent property.
+        - [DOK.nnz][sparse.DOK.nnz] : Equivalent [DOK][sparse.DOK] array property.
+        - [numpy.count_nonzero][] : A similar Numpy function.
+        - [scipy.sparse.coo_matrix.nnz][] : The Scipy equivalent property.
 
         Examples
         --------
@@ -742,7 +742,7 @@ class SparseArray:
 
         Examples
         --------
-        You can use `COO.var` to compute the variance of an array across any
+        You can use [COO.var][sparse.COO.var] to compute the variance of an array across any
         dimension.
 
         >>> from sparse import COO
@@ -844,7 +844,7 @@ class SparseArray:
         >>> s2.todense()  # doctest: +SKIP
         array([0.8291562, 0.4330127])
 
-        You can also use the :code:`keepdims` argument to keep the dimensions
+        You can also use the `keepdims` argument to keep the dimensions
         after the standard deviation.
 
         >>> s3 = s.std(axis=0, keepdims=True)

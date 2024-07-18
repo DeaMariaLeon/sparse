@@ -250,7 +250,7 @@ def random(
         the values of the structurally nonzero entries of the matrix.
     data_rvs : Callable
         Data generation callback. Must accept one single parameter: number of
-        :code:`nnz` elements, and return one single NumPy array of exactly
+        `nnz` elements, and return one single NumPy array of exactly
         that length.
     format : str
         The format to return the output array in.
@@ -264,8 +264,8 @@ def random(
 
     See Also
     --------
-    :obj:`scipy.sparse.rand` : Equivalent Scipy function.
-    :obj:`numpy.random.rand` : Similar Numpy function.
+    - [scipy.sparse.rand][] : Equivalent Scipy function.
+    - [numpy.random.rand][] : Similar Numpy function.
 
     Examples
     --------
